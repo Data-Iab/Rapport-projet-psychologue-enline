@@ -563,6 +563,9 @@ le fichier \textit{login.jsp} sera aussi changé
 \end{lstlisting}
 \end{small}
 
+
+Résultat final :
+
 \begin{center}
 \hspace*{-2cm}\includegraphics[scale=0.4]{C:/Workplace/java/project/14.png}
 \captionof{figure}{Page login}
@@ -586,7 +589,7 @@ le fichier \textit{login.jsp} sera aussi changé
 De plus du tableau \textit{login} on aura besoin d'autres pour stocker les questions posés par les psychologues et les réponses récupérés de la part des utilisateurs.\\
 On propose l'ajout de deux tableaux :\\
 \begin{itemize}
-\item Formulaires : renferme l'id du formulaire (Clé primaire), le nom du psychologue ( Créateur du formulaire ), le nom d'utilisateur ( Destinataire ) et l'état du formulaire ( Approuvé ou non par le RH )\\
+\item Formulaires : renferme l'id du formulaire (Clé primaire), le nom du psychologue ( Créateur du formulaire ), le nom d'utilisateur ( Destinataire ) et l'état du formulaire ( Approuvé ou non par le RH ).\\
 \item Questions : contient la question, son l'id ( Clé primaire ), l'id du formulaire où se trouve et les réponses fournies par les utilisateurs.
 \end{itemize}
 
@@ -611,17 +614,45 @@ On propose l'ajout de deux tableaux :\\
 \end{center}
 
 
+La création des deux tableaux consiste à lancer les deux requêtes :\\
 
 
 
+\begin{center}
+\includegraphics[scale=0.7]{C:/Workplace/java/project/15.png}
+\captionof{figure}{table formulaires}
+
+\vspace{1cm}
+\includegraphics[scale=0.7]{C:/Workplace/java/project/16.png}
+\captionof{figure}{table questions}
+\end{center}
+
+\textcolor{maroon}{NOTE : Pour éviter la confusion entre les id des formulaires et ceux des questions, les id des formulaires débuteraient toujours par un "10" (exemple : 101, 102 ...) alors que ceux des questions débuteraient avec un "20" (exemple : 201 202 ...)}\\
+
+
+Insérant par suite quelques données dans les tables pour qu'elles nous aident pendant la construction des interfaces des utilisateurs (formulaire 101 avec 2 questions 201 et 202 et formulaire 102 avec une question 203)\\
+
+ 
 
 
 
+\begin{center}
+\hspace*{-2cm}\includegraphics[scale=0.7]{C:/Workplace/java/project/17.png}
+\captionof{figure}{table formulaires}
+
+\vspace{1cm}
+\hspace*{-3cm}\includegraphics[scale=0.6]{C:/Workplace/java/project/18.png}
+\captionof{figure}{table questions}
+\end{center}
 
 
+Maintenant que tout est prêt, construisons les interfaces des utilisateurs.\\
+
+\section{Interface "Utilisateur"}
+\indent
 
 
-
+L'utilisateur doit être capable de voir les questions du formulaire fournit par le psychologue et approuvé par le RH. Il doit aussi avoir le droit de répondre à chaque question avec oui ou non. Finalement, il confirme ses réponses pour qu'elles soient envoyés au psychologue.
 
 
 
