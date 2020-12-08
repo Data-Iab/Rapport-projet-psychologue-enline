@@ -652,48 +652,278 @@ Maintenant que tout est prêt, construisons les interfaces des utilisateurs.\\
 \indent
 
 
-L'utilisateur doit être capable de voir les questions du formulaire fournit par le psychologue et approuvé par le RH. Il doit aussi avoir le droit de répondre à chaque question avec oui ou non. Finalement, il confirme ses réponses pour qu'elles soient envoyés au psychologue.
+L'utilisateur doit être capable de voir les questions du formulaire fournit par le psychologue et approuvé par le RH. Il doit aussi avoir le droit de répondre à chaque question avec oui ou non. Finalement, il confirme ses réponses pour qu'elles soient envoyés au psychologue.\\
+\subsection{Classe Question}
+
+La première étape consiste à créer une classe \textit{Question} (Similaire à \textit{Session}) dont les attributs sont les colonnes du tableau Questions. \\
 
 
 
 
 
+\lstset{language=java}
+\begin{lstlisting}
+package loginsession;
+
+public class Question {
+	public int id_question;
+	public int id_formulaire;
+	public String questiontext;
+	public boolean reponse;
+	
+	public void affectIdQuestion(int id_question) {
+		this.id_question =id_question;
+	}
+	public int returnIdQuestion() {
+		return id_question;
+	}
+	public void affectIdFormulaire(int id_formulaire) {
+		this.id_formulaire =id_formulaire;
+	}
+	public int returnIdformulaire() {
+		return id_formulaire;
+	}
+	public String returnQuestion() {
+		return questiontext;
+	}
+	public void affectQuestion(String questiontext) {
+		this.questiontext = questiontext;
+	}
+	public boolean returnReponse() {
+		return reponse;
+	}
+	public void affectReponse(boolean reponse) {
+		this.reponse =reponse;
+	}
+	
+}
+\end{lstlisting}
+
+
+\subsection{Chargement des questions depuis la base de données}
+
+Ensuite, on déclare la fonction question\_utilisateur() qui prend en argument une \textit{Session} et une liste des objets de la classe \textit{Question} puis ajoute dans cette liste les questions du formulaire envoyé à cet utilisateur et qui sont approuvés par le RH.\\
+
+
+Le tableau désiré est résultat de la requête :\\
+\textbf{SELECT} * \\
+\textbf{FROM} userdb.questions q \\
+\textbf{INNER JOIN} userdb.formulaires f \\
+\textbf{ON} f.id\_formulaire = q.id\_formulaire\\
+\textbf{WHERE} f.nom=? \\
+\textbf{AND} f.etat=1\\
+
+Le champ f.nom serait remplis par session.nom.
 
 
 
+\begin{small}
+\lstset{language=java}
+\begin{lstlisting}
+public void question_utilisateur(Session session, List<Question> userquestion)
+	{
+		boolean status;
+
+		loadDriver(dbDriver);
+		Connection con = getConnection();
+		String sql = "SELECT * FROM userdb.questions q 
+					  INNER JOIN userdb.formulaires f 
+					  ON f.id_formulaire=q.id_formulaire 
+					  WHERE f.nom=? AND f.etat=1";
+		PreparedStatement ps;
+		try {
+		ps = con.prepareStatement(sql);
+		ps.setString(1, session.returnNom());
+		ResultSet rs = ps.executeQuery();
+		status = rs.next();
+		while(status) {
+			Question question = new Question();
+			question.affectIdQuestion(rs.getInt("id_question"));
+			question.affectIdFormulaire(rs.getInt("id_formulaire"));
+			question.affectReponse(rs.getBoolean("reponse"));
+			question.affectQuestion(rs.getString("question"));
+
+			userquestion.add(question);
+			status = rs.next();
+		}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+\end{lstlisting}
+
+\end{small}
 
 
 
+\subsection{•}
+
+Finalement, dans la partie \emph{Utilisateur} de la servlet, on introduit la liste \textit{userquestion} des objets de la classe \textit{Question} qui serait remplies par la fonction \textit{question\_utilisateur()} et envoyée vers Utilisateur.jsp.
+
+
+\begin{small}
+\lstset{language=java}
+\begin{lstlisting}
+else if(session.returnType().equals("Utilisateur")) {
+	List<Question> userquestion = new ArrayList<Question>();
+	connexion_db.question_utilisateur(session, userquestion);
+	request.setAttribute("userquestion", userquestion);
+	request.setAttribute("utilisateur", session.returnNom());
+	RequestDispatcher rst = request.getRequestDispatcher("Utilisateur.jsp");
+	rst.forward(request, response);
+		}
+\end{lstlisting}
+
+\end{small}
+
+
+Finalement, la liste des questions peut être affichée à l'aide de foreach.\\
+
+\begin{small}
+\lstset{language=XML}
+\begin{lstlisting}
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>${utilisateur}</title>
+
+</head>
+<link href="UtilisateurCSS.css" rel="stylesheet" type="text/css">
+<body>
+ <form class=envoie action="envoie" method="post">
+  <br>
+  <br>
+  <h1 align=center>Veuillez repondre aux questions suivantes</h1>
+  <br>
+  <br>
+  <div class="container">
+   <table align=center>
+    <thead>
+     <tr>
+      <th>Question</th>
+      <th>Reponse</th>
+     </tr>
+    </thead>
+    <tbody>
+     <c:forEach items="${userquestion}" var="question">
+      <tr>
+       <td><c:out value="${question.returnQuestion()}" /></td>
+       <td>
+        <select name="reponse" class="dropbtn">
+         <option value="false">Oui</option>
+         <option value="true">Non</option>
+        </select></td>
+      </tr>
+     </c:forEach>
+    </tbody>
+    <thead>
+     <tr>
+      <td></td>
+      <th align=center><button type="submit" value="Login">Envoyer</button></th>
+     </tr>
+    </thead>
+   </table>
+  </div>
+ </form>
+</body>
+</html>
+\end{lstlisting}
+
+\end{small}
+
+
+\subsection{Partie CSS}
+
+Le fichier CSS décrivant la page utilisateur est donné par : 
 
 
 
+\lstset{language=CSS}
+\begin{lstlisting}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+h1{
+	 font-size: 20px;
+	 font-family: 'Courier New';
+	 color : white;
+}
+button {
+  background-color: white;
+  color: black;
+  display:inline-block;
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  margin: 30px 0;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.25s;
+}
+
+button:hover {
+  opacity: 0.8;
+  background-color: #E2B842;
+  color: white;
+}
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.dropbtn {
+  background-color: #012B39;
+  color: #ffffff;
+  padding: 10px 30px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+body {
+  background: #105469;
+  font-family: 'Open Sans', sans-serif;
+}
+table {
+  width: 70%;
+  background: #012B39;
+  border-radius: 0.25em;
+  border-collapse: collapse;
+  margin: 1em;
+}
+th {
+  border-bottom: 1px solid #364043;
+  color: #E2B842;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0.5em 1em;
+  text-align: Left;
+}
+td {
+  color: #fff;
+  font-weight: 400;
+  padding: 0.65em 1em;
+}
+.disabled td {
+  color: #4F5F64;
+}
+tbody tr {
+  transition: background 0.25s ease;
+}
+tbody tr:hover {
+  background: #014055;
+}
+\end{lstlisting}
 
 
+Résultat donné pour utilisateur "Ahmed" :\\
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{center}
+\includegraphics[scale=0.5]{C:/Workplace/java/project/19.png}
+\captionof{figure}{Interface utilisateur}
+\end{center}
 
 
 
