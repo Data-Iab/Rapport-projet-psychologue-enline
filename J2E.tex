@@ -112,20 +112,20 @@ showstringspaces=false}
 
 
 
-\section{Diagrammes UML}
+\section{Analyse et spécification des besoins}
 \subsection{Introduction}
-Pour assurer une bonne compréhension des différents fonctionnalités de notre projet, nous allons consacrer cette section pour identifier les acteurs de notre plateforme , cataloguer les besoins fonctionnels et les besoins non fonctionnels et terminer avec une présentation du diagramme des cas d'utilisation générale ainsi que le raffinement de chaque cas d'utilisation de notre application.
+Pour assurer une bonne compréhension des différents fonctionnalités de notre projet, nous allons consacrer cette section pour identifier les acteurs de notre plateforme, cataloguer les besoins fonctionnels et les besoins non fonctionnels et terminer avec une présentation du diagramme des cas d'utilisation générale ainsi que le raffinement de chaque cas d'utilisation de notre application.
 
 \subsection{Analyse des besoins}
 
- Notre but de cette partie est de définir avec détails l'ensemble des fonctionnalités offertes par l'application.Les besoins dégagés ont été répartis en deux catégories fonctionnnels et non fonctionnels.
+ Notre but de cette partie est de définir avec détails l'ensemble des fonctionnalités offertes par l'application. Les besoins dégagés ont été répartis en deux catégories fonctionnnels et non fonctionnels.
  \subsubsection{Les besoins fonctionnels}
  
- Les besoins fonctionnels se sont les fonctionnalités du système.Ce sont d'autre part les besoins spécifiant un comportement d'entrée ou bien sortie du système,ces derniers sont classés par acteurs.
+ Les besoins fonctionnels se sont les fonctionnalités du système. Ce sont d'autre part les besoins spécifiant un comportement d'entrée ou bien sortie du système, ces derniers sont classés par acteurs.
  
  \paragraph{Présentation des acteurs\\}
  
- Un acteur représente une personne ou un matériel ou un logiciel qui interagit d'une manière directer avec le système .Un acteur a le droit de consulter ou modifier directement l'état du système en émettant ou recevant des messages susceptible d'être porteur des données.\\
+ Un acteur représente une personne ou un matériel ou un logiciel qui interagit d'une manière directer avec le système. Un acteur a le droit de consulter ou modifier directement l'état du système en émettant ou recevant des messages susceptible d'être porteur des données.\\
  
  Les acteurs qui interagient dans notre système sont:\\
  
@@ -158,7 +158,7 @@ Psychologue & \begin{tabular}[c]{@{}l@{}}-S'authentifier\\ -Ajouter des question
 \paragraph{Les besoins non fionctionnels\\}
 
 
-Notre système doit répondre à des besoins qui ne sont pas indispensables pour son fonctionnement mais qui sont d'autre part importants pour sa qualité de ses services .Les besoins non fonctionnel sont importants à leurs rôles car ils interagient d'une manière indirecte sur le résultat et sur le rendement de l'utilisateur.\\
+Notre système doit répondre à des besoins qui ne sont pas indispensables pour son fonctionnement mais qui sont d'autre part importants pour sa qualité de ses services. Les besoins non fonctionnel sont importants à leurs rôles car ils interagient d'une manière indirecte sur le résultat et sur le rendement de l'utilisateur.\\
 
 On peut donc résumer les principaux besoins non fonctionnels de notre système dans :\\
 
@@ -175,7 +175,7 @@ On peut donc résumer les principaux besoins non fonctionnels de notre système 
 
 \subsection{définition}
 
-Le diagramme des cas d'utilisation permet de formaliser les besoins et de modéliser les services offerts par le système.C'est donc une vue du système dans son environnement extérieur.Il modélise à la fois des fonctionnalités et des interactions pour les acteurs.
+Le diagramme des cas d'utilisation permet de formaliser les besoins et de modéliser les services offerts par le système. C'est donc une vue du système dans son environnement extérieur. Il modélise à la fois des fonctionnalités et des interactions pour les acteurs.
 
 \subsection{Diagramme des cas d'utilisation}
 
@@ -267,9 +267,9 @@ Exception         & Pas d'exception                                             
 
 \subsection{Introduction}
 
-La conception est une étape importante dans la réalisation de l'application.Son objectif principal est de présenter une architecture stable qui permet de définier la réalisation et le fonctionnement du système et aussi éléminer les risques techniques.\\
+La conception est une étape importante dans la réalisation de l'application. Son objectif principal est de présenter une architecture stable qui permet de définier la réalisation et le fonctionnement du système et aussi éléminer les risques techniques.\\
 
-Pour donner une description abstraite du système,on est intéressé de faire une modélisation de notre application via un diagramme de classe qui va nous offrir une représentation simplifié du système permettant de comprendre et de stimuler ses activités et ses motivations internes.
+Pour donner une description abstraite du système, on est intéressé de faire une modélisation de notre application via un diagramme de classe qui va nous offrir une représentation simplifié du système permettant de comprendre et de stimuler ses activités et ses motivations internes.
 
 \subsection{Diagramme de classes}
 
@@ -281,7 +281,7 @@ L'intéret prinicipal de ce diagramme de classe est de modéliser les entités d
 
 \subsubsection{Présentation des classes}
 
-Une classe représente la structure d'un objet, la déclaration de l'ensemble des entités qui le composent .Une classe est composée donc de:\\
+Une classe représente la structure d'un objet, la déclaration de l'ensemble des entités qui le composent. Une classe est composée donc de:\\
 
 \begin{itemize}
 \item Des attributs : il s'agit des données, dont les valeurs représentent l'état de l'objet.
@@ -296,7 +296,7 @@ Les classes qui forment notre application sont les suivantes:
 
 \item \textbf{RH:} l'acteur qui approuve  le formulaire.
 
-\item \textbf{Formulaires:} la classe qui contient les informations des utilisateur , les psychologues et les états.
+\item \textbf{Formulaires:} la classe qui contient les informations des utilisateur, les psychologues et les états.
 
 \item \textbf{Questions:} la classe contient les questions et les réponses.
 
@@ -305,7 +305,7 @@ au RH
 \item   \textbf{Recommandation:} un objet qui représente une recommandation envoyée pas le psychologue à l'utilisateur
 \end{itemize}
 
-\subsection{Présentations des attributs et des méthodes}
+\subsubsection{Présentations des attributs et des méthodes}
 
 Les attributs et les méthodes de nos classes sont présentés dans le tableau :
 
@@ -322,7 +322,13 @@ notification   & \begin{tabular}[c]{@{}l@{}}id\\ notification\end{tabular}      
 Recommandation & \begin{tabular}[c]{@{}l@{}}id\\ objet \\ contenuRecommandation\end{tabular}                & \begin{tabular}[c]{@{}l@{}}getid()\\ getobjet()\\ getcontenuRecommandation()\\ setcontenuRecommandation()\\ envoieRocommandation()\end{tabular}                                         \\ \hline
 \end{tabular}
 
+\subsubsection{Diagramme de classe}
 
+La figure ci-dessous récapitule le tableau précédent dans un diagramme de classe réalisé à l'aide de l'outil Enterprise Architect et qui englobe toutes les informations qu'on a cité avant:
+\begin{center}
+\includegraphics[scale=0.6]{C:/Users/meryam/Videos/Model.png}
+\captionof{figure}{Diagramme de classe}
+\end{center}
 
 
 \section{Page Login}
