@@ -1141,6 +1141,88 @@ tbody tr:hover {
   background: #014055;
 }
 \end{lstlisting}
+\subsection{Récupération des réponses par la base de données}
+
+Dans la claase DB, on introduit la fonction \textit{ updateQuetions()} qui prend en argument une liste des id des question et une autre contenant les réponses. Puis insère les réponses correspondant aux id dans la base de données en exécutant la requête :\\
+
+\textbf{UPDATE} `userdb`.`questions` \\
+\textbf{SET} `reponse` = ? \\
+\textbf{WHERE} (`id\_question` = ?)\\
+
+\lstset{language=java}
+\begin{lstlisting}
+public void updateQuestion(int[] idQuestions, int[] reponses){
+	loadDriver(dbDriver);
+	Connection con = getConnection();
+	String sql = "UPDATE `userdb`.`questions` 
+				  SET `reponse` = ? 
+				  WHERE (`id_question` = ?);";
+	PreparedStatement ps;
+	try {
+		for(int j = 0 ; j < idQuestions.length ; j++) {
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, reponses[j]);
+			ps.setInt(2, idQuestions[j]);
+			ps.executeUpdate();
+		}
+		} catch (SQLException e) {
+			e.printStackTrace();
+	}
+}
+\end{lstlisting}
+
+
+
+Le bouton \textbf{'Envoyer'} fait appel à la servlet \textit{Utilisateur} qui, à son rôle, extrait les réponses et les id des questions et les insèrent dans la base de données à l'aide de \textit{updateQuestion()}.
+
+
+
+\begin{small}
+
+\begin{lstlisting}
+package web;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import base_donnees.DB;
+
+@WebServlet("/utilisateur")
+public class Utilisateur extends HttpServlet {
+	protected void doPost(HttpServletRequest request, 
+						  HttpServletResponse response) 
+	throws ServletException, IOException {
+		String[] reponsesExtraits = request.getParameterValues("reponse");
+		String[] idQuestionsExtraits = request.getParameterValues("idQuestion");
+		int[] idQuestions = new int[idQuestionsExtraits.length];
+		int[] reponses = new int[reponsesExtraits.length];
+		for(int i =0 ;i<idQuestionsExtraits.length;i++) {
+			idQuestions[i] = Integer.parseInt(idQuestionsExtraits[i]);
+			reponses[i] = Integer.parseInt(reponsesExtraits[i]);
+		}
+		DB db_connexion = new DB();
+		db_connexion.updateQuestion(idQuestions, reponses);		
+		response.sendRedirect("EnvoieSucces.jsp");
+	}
+}
+\end{lstlisting}
+\end{small}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Résultat donné pour utilisateur "Ahmed" :\\

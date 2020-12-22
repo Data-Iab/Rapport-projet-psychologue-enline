@@ -1,0 +1,733 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.23)  8 DEC 2020 19:12
+entering extended mode
+**./JEE.tex
+(JEE.tex
+LaTeX2e <2020-10-01> patch level 2
+L3 programming layer <2020-10-27> xparse <2020-03-03>
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count175
+\c@section=\count176
+\c@subsection=\count177
+\c@subsubsection=\count178
+\c@paragraph=\count179
+\c@subparagraph=\count180
+\c@figure=\count181
+\c@table=\count182
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+\lst@mode=\count183
+\lst@gtempboxa=\box47
+\lst@token=\toks16
+\lst@length=\count184
+\lst@currlwidth=\dimen139
+\lst@column=\count185
+\lst@pos=\count186
+\lst@lostspace=\dimen140
+\lst@width=\dimen141
+\lst@newlines=\count187
+\lst@lineno=\count188
+\lst@maxwidth=\dimen142
+
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count189
+\lst@skipnumbers=\count190
+\lst@framebox=\box48
+)
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
+
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+)) (C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen143
+\captionmargin@=\dimen144
+\captionwidth=\dimen145
+\caption@tempdima=\dimen146
+\caption@indent=\dimen147
+\caption@parindent=\dimen148
+\caption@hangindent=\dimen149
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count191
+\c@continuedfloat=\count192
+Package caption Info: listings package is loaded.
+)
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+)
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
+Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
+\c@subfigure=\count193
+\c@subtable=\count194
+)
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/graphics\Graphicx.sty
+
+LaTeX Warning: You have requested package `Graphicx',
+               but the package provides `graphicx'.
+
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen150
+\Gin@req@width=\dimen151
+) (C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+) (C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/minitoc\minitoc.sty
+Package: minitoc 2018/07/12 v62 Package minitoc
+
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/minitoc\mtcmess.sty
+Package: mtcmess 2006/03/14
+)
+Package minitoc Info: I0001
+(minitoc)             *** minitoc package, version 62 ***.
+\tf@mtc=\write3
+\mtcindent=\skip49
+\mtcskipamount=\skip50
+Package minitoc Info: I0005
+(minitoc)             compatible with hyperref.
+Package minitoc Info: I0023
+(minitoc)             part level macros available.
+Package minitoc Info: I0004
+(minitoc)             chapter level macros NOT available.
+Package minitoc Info: I0028
+(minitoc)             section level macros available.
+\mtc@toks=\toks17
+\mtc@strutbox=\box49
+\mtc@hstrutbox=\box50
+Package minitoc Info: I0002
+(minitoc)             Autoconfiguration of extensions.
+\openout3 = `JEE.mtc0'.
+
+\openout3 = `JEE.mtc'.
+
+
+(JEE.mtc0)
+Package minitoc Info: I0012
+(minitoc)             Long extensions (Unix-like) will be used.
+Package minitoc Info: I0031
+(minitoc)             ==> this version is configured for UNIX-like 
+(minitoc)                 (long extensions) file names.
+\openout3 = `JEE.mtc'.
+
+\openout3 = `JEE.mtc0'.
+
+\c@ptc=\count195
+\c@parttocdepth=\count196
+\ptcindent=\skip51
+\c@stc=\count197
+\c@secttocdepth=\count198
+\stcindent=\skip52
+Package minitoc Info: I0010
+(minitoc)             The english language is selected.
+(minitoc)              on input line 4910.
+
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/minitoc\english.mld
+File: english.mld 2006/01/13
+)
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/minitoc\english.mld
+File: english.mld 2006/01/13
+))
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdfte
+x.def
+File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count199
+\l__pdf_internal_box=\box51
+)
+
+LaTeX Warning: Unused global option(s):
+    [12].
+
+(JEE.aux)
+\openout1 = `JEE.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+\c@lstlisting=\count266
+
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count267
+\scratchdimen=\dimen152
+\scratchbox=\box52
+\nofMPsegments=\count268
+\nofMParguments=\count269
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count270
+\MPscratchDim=\dimen153
+\MPnumerator=\count271
+\makeMPintoPDFobject=\count272
+\everyMPtoPDFconversion=\toks19
+)
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-bas
+e.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+Package minitoc(hints) Info: I0049
+(minitoc(hints))             ==> You requested the hints option. 
+(minitoc(hints))             Some hints are eventually given below.
+<C:/workplace/Java/project/inpt.png, id=1, 281.05pt x 138.5175pt>
+File: C:/workplace/Java/project/inpt.png Graphic file (type png)
+<use C:/workplace/Java/project/inpt.png>
+Package pdftex.def Info: C:/workplace/Java/project/inpt.png  used on input line
+ 72.
+(pdftex.def)             Requested size: 84.31564pt x 41.55556pt.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10> not available
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 74.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <17.28> not available
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 74.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <14.4> not available
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 76.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 92.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 92.
+[1
+
+{C:/Users/MSI/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <C:/workplace/Java
+/project/inpt.png>] (JEE.toc)
+\tf@toc=\write4
+\openout4 = `JEE.toc'.
+
+ [1]
+Overfull \hbox (17.8789pt too wide) in paragraph at lines 143--144
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][] 
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
+
+ []
+
+<C:/Workplace/java/project/1.png, id=22, 275.8305pt x 98.16675pt>
+File: C:/Workplace/java/project/1.png Graphic file (type png)
+<use C:/Workplace/java/project/1.png>
+Package pdftex.def Info: C:/Workplace/java/project/1.png  used on input line 15
+6.
+(pdftex.def)             Requested size: 165.49957pt x 58.9005pt.
+
+Overfull \hbox (20.1832pt too wide) in paragraph at lines 163--163
+[]\OT1/cmr/bx/n/12 Connexion avec une base de donnees MySQL : verification
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+
+ []
+
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 172.
+[3 <C:/Workplace/java/project/1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
+
+ []
+
+
+Overfull \hbox (51.89923pt too wide) in paragraph at lines 207--208
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][] 
+ []
+
+
+Overfull \hbox (51.89923pt too wide) in paragraph at lines 208--209
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (133.79907pt too wide) in paragraph at lines 209--210
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.0993pt too wide) in paragraph at lines 212--213
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (121.1991pt too wide) in paragraph at lines 225--226
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[4]
+<C:/Workplace/java/project/2.png, id=31, 916.6245pt x 617.9085pt>
+File: C:/Workplace/java/project/2.png Graphic file (type png)
+<use C:/Workplace/java/project/2.png>
+Package pdftex.def Info: C:/Workplace/java/project/2.png  used on input line 26
+2.
+(pdftex.def)             Requested size: 274.98947pt x 185.37398pt.
+ [5]
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
+
+ []
+
+<C:/Workplace/java/project/3.png, id=35, 758.835pt x 390.258pt>
+File: C:/Workplace/java/project/3.png Graphic file (type png)
+<use C:/Workplace/java/project/3.png>
+Package pdftex.def Info: C:/Workplace/java/project/3.png  used on input line 26
+9.
+(pdftex.def)             Requested size: 303.52863pt x 156.10042pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+
+ []
+
+<C:/Workplace/java/project/4.png, id=36, 458.9145pt x 112.0185pt>
+File: C:/Workplace/java/project/4.png Graphic file (type png)
+<use C:/Workplace/java/project/4.png>
+Package pdftex.def Info: C:/Workplace/java/project/4.png  used on input line 27
+7.
+(pdftex.def)             Requested size: 229.45668pt x 56.0091pt.
+[6 <C:/Workplace/java/project/2.png> <C:/Workplace/java/project/3.png> <C:/Work
+place/java/project/4.png>]
+Overfull \hbox (34.69505pt too wide) in paragraph at lines 288--289
+\OT1/cmr/m/n/10 Dans le pack-age web, in-tro-duisant la premiere servlet qui v
+a se servir de l'authentification
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 309--310
+
+ []
+
+
+Overfull \hbox (1.49933pt too wide) in paragraph at lines 328--329
+[][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.99927pt too wide) in paragraph at lines 331--333
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 353--354
+
+ []
+
+[8]
+<C:/Workplace/java/project/5.png, id=47, 846.7635pt x 250.536pt>
+File: C:/Workplace/java/project/5.png Graphic file (type png)
+<use C:/Workplace/java/project/5.png>
+Package pdftex.def Info: C:/Workplace/java/project/5.png  used on input line 35
+6.
+(pdftex.def)             Requested size: 338.6994pt x 100.21262pt.
+<C:/Workplace/java/project/6.png, id=48, 847.968pt x 255.354pt>
+File: C:/Workplace/java/project/6.png Graphic file (type png)
+<use C:/Workplace/java/project/6.png>
+Package pdftex.def Info: C:/Workplace/java/project/6.png  used on input line 36
+1.
+(pdftex.def)             Requested size: 339.18118pt x 102.13979pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
+
+ []
+
+<C:/Workplace/java/project/7.png, id=49, 509.5035pt x 103.587pt>
+File: C:/Workplace/java/project/7.png Graphic file (type png)
+<use C:/Workplace/java/project/7.png>
+Package pdftex.def Info: C:/Workplace/java/project/7.png  used on input line 37
+1.
+(pdftex.def)             Requested size: 356.65001pt x 72.51039pt.
+
+Overfull \hbox (11.65001pt too wide) in paragraph at lines 371--372
+ [] 
+ []
+
+[9 <C:/Workplace/java/project/5.png> <C:/Workplace/java/project/6.png> <C:/Work
+place/java/project/7.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 410--411
+
+ []
+
+
+Overfull \hbox (108.59912pt too wide) in paragraph at lines 422--423
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ 
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 440--441
+
+ []
+
+
+Overfull \hbox (1.49933pt too wide) in paragraph at lines 448--449
+[][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.99927pt too wide) in paragraph at lines 451--453
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][] 
+ []
+
+
+Overfull \hbox (7.79932pt too wide) in paragraph at lines 458--459
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (39.29926pt too wide) in paragraph at lines 461--462
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--480
+
+ []
+
+[12] [13]
+Overfull \hbox (23.54889pt too wide) in paragraph at lines 545--546
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (80.24872pt too wide) in paragraph at lines 550--551
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (102.92865pt too wide) in paragraph at lines 553--554
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (102.92865pt too wide) in paragraph at lines 556--557
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+<C:/Workplace/java/project/14.png, id=66, 1156.32pt x 564.9105pt>
+File: C:/Workplace/java/project/14.png Graphic file (type png)
+<use C:/Workplace/java/project/14.png>
+Package pdftex.def Info: C:/Workplace/java/project/14.png  used on input line 5
+70.
+(pdftex.def)             Requested size: 462.5198pt x 225.96019pt.
+
+Overfull \hbox (60.6143pt too wide) in paragraph at lines 570--571
+ | [] 
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 589--591
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 592--593
+
+ []
+
+[15 <C:/Workplace/java/project/14.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 617--618
+
+ []
+
+<C:/Workplace/java/project/15.png, id=74, 295.1025pt x 132.495pt>
+File: C:/Workplace/java/project/15.png Graphic file (type png)
+<use C:/Workplace/java/project/15.png>
+Package pdftex.def Info: C:/Workplace/java/project/15.png  used on input line 6
+22.
+(pdftex.def)             Requested size: 206.57033pt x 92.74585pt.
+<C:/Workplace/java/project/16.png, id=75, 267.399pt x 116.8365pt>
+File: C:/Workplace/java/project/16.png Graphic file (type png)
+<use C:/Workplace/java/project/16.png>
+Package pdftex.def Info: C:/Workplace/java/project/16.png  used on input line 6
+26.
+(pdftex.def)             Requested size: 187.17802pt x 81.78499pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 630--631
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 633--634
+
+ []
+
+<C:/Workplace/java/project/17.png, id=76, 619.113pt x 63.8385pt>
+File: C:/Workplace/java/project/17.png Graphic file (type png)
+<use C:/Workplace/java/project/17.png>
+Package pdftex.def Info: C:/Workplace/java/project/17.png  used on input line 6
+40.
+(pdftex.def)             Requested size: 433.37614pt x 44.68663pt.
+
+Overfull \hbox (31.47064pt too wide) in paragraph at lines 640--641
+ | [] 
+ []
+
+[16 <C:/Workplace/java/project/15.png> <C:/Workplace/java/project/16.png>]
+<C:/Workplace/java/project/18.png, id=80, 873.2625pt x 74.679pt>
+File: C:/Workplace/java/project/18.png Graphic file (type png)
+<use C:/Workplace/java/project/18.png>
+Package pdftex.def Info: C:/Workplace/java/project/18.png  used on input line 6
+44.
+(pdftex.def)             Requested size: 523.96153pt x 44.80772pt.
+
+Overfull \hbox (93.60327pt too wide) in paragraph at lines 644--645
+ []| [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 649--650
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--656
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 658--659
+
+ []
+
+[17 <C:/Workplace/java/project/17.png> <C:/Workplace/java/project/18.png>]
+Overfull \hbox (1.49933pt too wide) in paragraph at lines 680--681
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 705--706
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--715
+
+ []
+
+[18]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 723.
+
+Overfull \hbox (97.25867pt too wide) in paragraph at lines 723--724
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.8789pt too wide) in paragraph at lines 741--742
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (40.55884pt too wide) in paragraph at lines 742--743
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (0.86896pt too wide) in paragraph at lines 743--744
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (6.53894pt too wide) in paragraph at lines 744--746
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[19]
+Overfull \hbox (0.86896pt too wide) in paragraph at lines 769--770
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (0.86896pt too wide) in paragraph at lines 771--772
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (85.9187pt too wide) in paragraph at lines 772--773
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 780--781
+
+ []
+
+
+Overfull \hbox (6.53894pt too wide) in paragraph at lines 786--787
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][] 
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
+791.
+(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
+File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+Overfull \hbox (23.54889pt too wide) in paragraph at lines 794--795
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ 
+ []
+
+
+Overfull \hbox (23.54889pt too wide) in paragraph at lines 799--800
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[20]
+Overfull \hbox (6.53894pt too wide) in paragraph at lines 813--814
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (108.59863pt too wide) in paragraph at lines 825--826
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (102.29913pt too wide) in paragraph at lines 846--847
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[21] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 921--922
+
+ []
+
+<C:/Workplace/java/project/19.png, id=101, 808.2195pt x 392.667pt>
+File: C:/Workplace/java/project/19.png Graphic file (type png)
+<use C:/Workplace/java/project/19.png>
+Package pdftex.def Info: C:/Workplace/java/project/19.png  used on input line 9
+24.
+(pdftex.def)             Requested size: 404.10876pt x 196.33302pt.
+
+Overfull \hbox (59.10876pt too wide) in paragraph at lines 924--925
+ [] 
+ []
+
+[23]
+Package minitoc Info: I0009
+(minitoc)             Listing minitoc auxiliary files. 
+(minitoc)             Creating the JEE.maf file.
+\openout3 = `JEE.maf'.
+
+Package minitoc(hints) Info: I0019
+(minitoc(hints))             No hints have been written 
+(minitoc(hints))             in the JEE.log file..
+ [24 <C:/Workplace/java/project/19.png>] (JEE.aux) ) 
+Here is how much of TeX's memory you used:
+ 6454 strings out of 479799
+ 97875 string characters out of 2870672
+ 556746 words of memory out of 3000000
+ 23208 multiletter control sequences out of 15000+200000
+ 540627 words of font info for 48 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 66i,12n,72p,305b,1694s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\MSI\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt0900.pk> <C:\Users\MSI\AppData\
+Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/MSI/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/MS
+I/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/U
+sers/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.p
+fb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmr5.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmss12.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmssbx10.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/MSI/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on JEE.pdf (25 pages, 973696 bytes).
+PDF statistics:
+ 149 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+

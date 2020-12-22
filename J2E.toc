@@ -32,8 +32,9 @@
 \contentsline {subsection}{\numberline {6.2}Chargement des questions depuis la base de données}{28}{}%
 \contentsline {subsection}{\numberline {6.3}Affichage des questions}{30}{}%
 \contentsline {subsection}{\numberline {6.4}Partie CSS}{31}{}%
-\contentsline {section}{\numberline {7}Interface "RH"}{34}{}%
-\contentsline {subsection}{\numberline {7.1}Classe Formulaire}{35}{}%
-\contentsline {subsection}{\numberline {7.2}Chargement des formulaires depuis la base de donnée}{36}{}%
-\contentsline {subsection}{\numberline {7.3}Affichage de formulaire}{36}{}%
-\contentsline {subsection}{\numberline {7.4}Partie CSS}{38}{}%
+\contentsline {subsection}{\numberline {6.5}Récupération des réponses par la base de données}{33}{}%
+\contentsline {section}{\numberline {7}Interface "RH"}{36}{}%
+\contentsline {subsection}{\numberline {7.1}Classe Formulaire}{36}{}%
+\contentsline {subsection}{\numberline {7.2}Chargement des formulaires depuis la base de donnée}{37}{}%
+\contentsline {subsection}{\numberline {7.3}Affichage de formulaire}{38}{}%
+\contentsline {subsection}{\numberline {7.4}Partie CSS}{40}{}%

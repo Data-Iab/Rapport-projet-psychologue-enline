@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.23)  22 DEC 2020 14:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.23)  22 DEC 2020 17:11
 entering extended mode
 **./J2E.tex
 (J2E.tex
@@ -783,124 +783,173 @@ Underfull \hbox (badness 10000) in paragraph at lines 1146--1147
 
  []
 
-<C:/Workplace/java/project/19.png, id=136, 808.2195pt x 392.667pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1148--1151
+
+ []
+
+[33]
+Overfull \hbox (45.59924pt too wide) in paragraph at lines 1154--1155
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.49933pt too wide) in paragraph at lines 1162--1163
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][] 
+ []
+
+[34]
+Overfull \hbox (74.57874pt too wide) in paragraph at lines 1198--1199
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (108.59863pt too wide) in paragraph at lines 1199--1200
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.8789pt too wide) in paragraph at lines 1200--1201
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (51.8988pt too wide) in paragraph at lines 1203--1204
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.8789pt too wide) in paragraph at lines 1204--1205
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.8789pt too wide) in paragraph at lines 1207--1208
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1228--1229
+
+ []
+
+<C:/Workplace/java/project/19.png, id=142, 808.2195pt x 392.667pt>
 File: C:/Workplace/java/project/19.png Graphic file (type png)
 <use C:/Workplace/java/project/19.png>
 Package pdftex.def Info: C:/Workplace/java/project/19.png  used on input line 1
-149.
+231.
 (pdftex.def)             Requested size: 323.28207pt x 157.06401pt.
-[33]
-<C:/Workplace/java/project/21.png, id=140, 686.565pt x 157.7895pt>
+<C:/Workplace/java/project/21.png, id=143, 686.565pt x 157.7895pt>
 File: C:/Workplace/java/project/21.png Graphic file (type png)
 <use C:/Workplace/java/project/21.png>
 Package pdftex.def Info: C:/Workplace/java/project/21.png  used on input line 1
-157.
+239.
 (pdftex.def)             Requested size: 343.28166pt x 78.89455pt.
-<C:/Workplace/java/project/20.png, id=141, 709.4505pt x 203.5605pt>
+[35 <C:/Workplace/java/project/19.png> <C:/Workplace/java/project/21.png>]
+<C:/Workplace/java/project/20.png, id=147, 709.4505pt x 203.5605pt>
 File: C:/Workplace/java/project/20.png Graphic file (type png)
 <use C:/Workplace/java/project/20.png>
 Package pdftex.def Info: C:/Workplace/java/project/20.png  used on input line 1
-164.
+246.
 (pdftex.def)             Requested size: 347.63379pt x 99.74551pt.
 
-Overfull \hbox (2.63379pt too wide) in paragraph at lines 1164--1165
+Overfull \hbox (2.63379pt too wide) in paragraph at lines 1246--1247
  [] 
  []
 
-[34 <C:/Workplace/java/project/19.png> <C:/Workplace/java/project/21.png> <C:/W
-orkplace/java/project/20.png>] [35]
-Overfull \hbox (83.39917pt too wide) in paragraph at lines 1216--1217
+[36 <C:/Workplace/java/project/20.png>]
+Overfull \hbox (83.39917pt too wide) in paragraph at lines 1298--1299
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ] 
  []
 
 
-Overfull \hbox (177.89899pt too wide) in paragraph at lines 1224--1225
+Overfull \hbox (177.89899pt too wide) in paragraph at lines 1306--1307
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (7.79932pt too wide) in paragraph at lines 1226--1227
+Overfull \hbox (7.79932pt too wide) in paragraph at lines 1308--1309
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (51.89923pt too wide) in paragraph at lines 1227--1228
+Overfull \hbox (51.89923pt too wide) in paragraph at lines 1309--1310
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (26.69928pt too wide) in paragraph at lines 1228--1229
+Overfull \hbox (26.69928pt too wide) in paragraph at lines 1310--1311
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (14.0993pt too wide) in paragraph at lines 1229--1230
+Overfull \hbox (14.0993pt too wide) in paragraph at lines 1311--1312
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[36]
-Overfull \hbox (77.09918pt too wide) in paragraph at lines 1253--1254
+[37]
+Overfull \hbox (77.09918pt too wide) in paragraph at lines 1335--1336
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
 
  []
 
 
-Overfull \hbox (45.59924pt too wide) in paragraph at lines 1261--1262
+Overfull \hbox (45.59924pt too wide) in paragraph at lines 1343--1344
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (7.79932pt too wide) in paragraph at lines 1269--1270
+Overfull \hbox (7.79932pt too wide) in paragraph at lines 1351--1352
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
-Overfull \hbox (39.29926pt too wide) in paragraph at lines 1274--1275
+[38]
+Overfull \hbox (39.29926pt too wide) in paragraph at lines 1356--1357
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][] 
  []
 
-[37]
-Overfull \hbox (14.0993pt too wide) in paragraph at lines 1289--1290
+
+Overfull \hbox (14.0993pt too wide) in paragraph at lines 1371--1372
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (7.79932pt too wide) in paragraph at lines 1290--1291
+Overfull \hbox (7.79932pt too wide) in paragraph at lines 1372--1373
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (158.99902pt too wide) in paragraph at lines 1302--1303
+Overfull \hbox (158.99902pt too wide) in paragraph at lines 1384--1385
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
-Overfull \hbox (102.29913pt too wide) in paragraph at lines 1317--1318
+[39]
+Overfull \hbox (102.29913pt too wide) in paragraph at lines 1399--1400
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[38] [39]
-<C:/Workplace/Java/project/Capture.PNG, id=162, 709.14937pt x 317.68687pt>
+[40] [41]
+<C:/Workplace/Java/project/Capture.PNG, id=168, 709.14937pt x 317.68687pt>
 File: C:/Workplace/Java/project/Capture.PNG Graphic file (type png)
 <use C:/Workplace/Java/project/Capture.PNG>
 Package pdftex.def Info: C:/Workplace/Java/project/Capture.PNG  used on input l
-ine 1396.
+ine 1478.
 (pdftex.def)             Requested size: 354.57382pt x 158.84303pt.
 
-Overfull \hbox (9.57382pt too wide) in paragraph at lines 1396--1397
+Overfull \hbox (9.57382pt too wide) in paragraph at lines 1478--1479
  [] 
  []
 
-[40]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the J2E.maf file.
@@ -909,33 +958,33 @@ Package minitoc Info: I0009
 Package minitoc(hints) Info: I0019
 (minitoc(hints))             No hints have been written 
 (minitoc(hints))             in the J2E.log file..
- [41 <C:/Workplace/Java/project/Capture.PNG>] (J2E.aux) ) 
+[42 <C:/Workplace/Java/project/Capture.PNG>] (J2E.aux) ) 
 Here is how much of TeX's memory you used:
- 6562 strings out of 479799
- 99686 string characters out of 2870672
+ 6576 strings out of 479799
+ 99896 string characters out of 2870672
  555694 words of memory out of 3000000
- 23297 multiletter control sequences out of 15000+200000
+ 23311 multiletter control sequences out of 15000+200000
  540924 words of font info for 49 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,13n,72p,466b,1688s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\MSI\AppData
-\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1000.pk> <C:\Users\MSI\App
-Data\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt0900.pk> <C:\Users\MSI
-\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/
-MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:
-/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.
-pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmcsc10.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmr10.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmr5.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmss12.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/MSI/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/MSI/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/MSI/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on J2E.pdf (42 pages, 1167984 bytes).
+ <C:\Users\MSI\AppData\
+Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1000.pk> <C:\Users\MSI\AppD
+ata\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt0900.pk> <C:\Users\MSI\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/M
+SI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/
+Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.p
+fb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mcsc10.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmr5.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmss12.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/MSI/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/MSI/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/MSI/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on J2E.pdf (43 pages, 1174114 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
+ 220 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
