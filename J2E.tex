@@ -326,7 +326,7 @@ Recommandation & \begin{tabular}[c]{@{}l@{}}id\\ objet \\ contenuRecommandation\
 
 La figure ci-dessous récapitule le tableau précédent dans un diagramme de classe réalisé à l'aide de l'outil Enterprise Architect et qui englobe toutes les informations qu'on a cité avant:
 \begin{center}
-\includegraphics[scale=0.6]{C:/Workplace/java/project/Model.png}
+\includegraphics[scale=0.6]{C:/Users/meryam/Videos/Model.png}
 \captionof{figure}{Diagramme de classe}
 \end{center}
 
@@ -918,14 +918,14 @@ public class Question {
 	public void affectReponse(boolean reponse) {
 		this.reponse =reponse;
 	}
+	
 }
-
 \end{lstlisting}
 
 
 \subsection{Chargement des questions depuis la base de données}
 
-Ensuite, on déclare la fonction question\_utilisateur() dans la classe \textit{DB} qui prend en argument une \textit{Session} et une liste des objets de la classe \textit{Question} puis ajoute dans cette liste les questions du formulaire envoyé à cet utilisateur, qui sont approuvés par le RH et n'ont pas encore de réponses (Champ null).\\
+Ensuite, on déclare la fonction question\_utilisateur() qui prend en argument une \textit{Session} et une liste des objets de la classe \textit{Question} puis ajoute dans cette liste les questions du formulaire envoyé à cet utilisateur et qui sont approuvés par le RH.\\
 
 
 Le tableau désiré est résultat de la requête :\\
@@ -935,7 +935,6 @@ Le tableau désiré est résultat de la requête :\\
 \textbf{ON} f.id\_formulaire = q.id\_formulaire\\
 \textbf{WHERE} f.nom=? \\
 \textbf{AND} f.etat=1\\
-\textbf{AND} q.reponse is \textbf{NULL} \\
 
 Le champ f.nom serait remplis par session.nom.
 
@@ -944,36 +943,36 @@ Le champ f.nom serait remplis par session.nom.
 \begin{small}
 \lstset{language=java}
 \begin{lstlisting}
-public void question_utilisateur(Session session, List<Question> userquestion){
-	boolean status;
+public void question_utilisateur(Session session, List<Question> userquestion)
+	{
+		boolean status;
 
-	loadDriver(dbDriver);
-	Connection con = getConnection();
-	String sql = "SELECT * 
-				  FROM userdb.questions q 
-				  INNER JOIN userdb.formulaires f 
-				  ON f.id_formulaire = q.id_formulaire 
-				  WHERE f.nom=? AND f.etat=1 AND q.reponse is NULL";
-	PreparedStatement ps;
-	try {
-	  ps = con.prepareStatement(sql);
-	  ps.setString(1, session.returnNom());
-	  ResultSet rs = ps.executeQuery();
-	  status = rs.next();
-	  while(status) {
-		Question question = new Question();
-		question.affectIdQuestion(rs.getInt("id_question"));
-		question.affectIdFormulaire(rs.getInt("id_formulaire"));
-		question.affectReponse(rs.getBoolean("reponse"));
-		question.affectQuestion(rs.getString("question"));
-
-		userquestion.add(question);
+		loadDriver(dbDriver);
+		Connection con = getConnection();
+		String sql = "SELECT * FROM userdb.questions q 
+					  INNER JOIN userdb.formulaires f 
+					  ON f.id_formulaire=q.id_formulaire 
+					  WHERE f.nom=? AND f.etat=1";
+		PreparedStatement ps;
+		try {
+		ps = con.prepareStatement(sql);
+		ps.setString(1, session.returnNom());
+		ResultSet rs = ps.executeQuery();
 		status = rs.next();
-	  }
-	} catch (SQLException e) {
-		e.printStackTrace();
+		while(status) {
+			Question question = new Question();
+			question.affectIdQuestion(rs.getInt("id_question"));
+			question.affectIdFormulaire(rs.getInt("id_formulaire"));
+			question.affectReponse(rs.getBoolean("reponse"));
+			question.affectQuestion(rs.getString("question"));
+
+			userquestion.add(question);
+			status = rs.next();
+		}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
-}
 \end{lstlisting}
 
 \end{small}
@@ -982,34 +981,33 @@ public void question_utilisateur(Session session, List<Question> userquestion){
 
 \subsection{Affichage des questions}
 
-Finalement, dans la partie \emph{Utilisateur} de la servlet, on introduit la liste \textit{userquestion} des objets de la classe \textit{Question} qui serait remplies par la fonction \textit{question\_utilisateur()} et envoyée vers Utilisateur.jsp. Au cas où il n'y a pas de questions pour le moment, l'utilisateur serait redirigé vers \textit{noQuestion.jsp}.
+Finalement, dans la partie \emph{Utilisateur} de la servlet, on introduit la liste \textit{userquestion} des objets de la classe \textit{Question} qui serait remplies par la fonction \textit{question\_utilisateur()} et envoyée vers Utilisateur.jsp.
 
 
 \begin{small}
 \lstset{language=java}
 \begin{lstlisting}
 else if(session.returnType().equals("Utilisateur")) {
-	  List<Question> userquestion = new ArrayList<Question>();
-	  connexion_db.question_utilisateur(session, userquestion);
-	  if(userquestion.size() == 0)
-		  response.sendRedirect("noQuestions.jsp");
-	  else {
-		  request.setAttribute("userquestion", userquestion);
-		  request.setAttribute("utilisateur", session.returnNom());
-		  RequestDispatcher rst = request.getRequestDispatcher("Utilisateur.jsp");
-		  rst.forward(request, response);
-	  }
-}
+	List<Question> userquestion = new ArrayList<Question>();
+	connexion_db.question_utilisateur(session, userquestion);
+	request.setAttribute("userquestion", userquestion);
+	request.setAttribute("utilisateur", session.returnNom());
+	RequestDispatcher rst = request.getRequestDispatcher("Utilisateur.jsp");
+	rst.forward(request, response);
+		}
 \end{lstlisting}
 
 \end{small}
 
 
-Finalement, la liste des questions peut être affichée à l'aide de foreach dans \textit{Utilisateur.jsp}.\\
+Finalement, la liste des questions peut être affichée à l'aide de foreach.\\
 
 \begin{small}
 \lstset{language=XML}
 \begin{lstlisting}
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -1018,7 +1016,7 @@ Finalement, la liste des questions peut être affichée à l'aide de foreach dan
 </head>
 <link href="UtilisateurCSS.css" rel="stylesheet" type="text/css">
 <body>
- <form action="utilisateur" method="post">
+ <form class=envoie action="envoie" method="post">
   <br>
   <br>
   <h1 align=center>Veuillez repondre aux questions suivantes</h1>
@@ -1036,18 +1034,18 @@ Finalement, la liste des questions peut être affichée à l'aide de foreach dan
      <c:forEach items="${userquestion}" var="question">
       <tr>
        <td><c:out value="${question.returnQuestion()}" /></td>
-       <input type="hidden" name="idQuestion" value="${question.returnIdQuestion()}"/>
-       <td ><select name="reponse"  class="dropbtn">
-         <option value="1">Oui</option>
-	     <option value="0">Non</option>
-	   </select></td>
-	  </tr>
-	 </c:forEach>
+       <td>
+        <select name="reponse" class="dropbtn">
+         <option value="false">Oui</option>
+         <option value="true">Non</option>
+        </select></td>
+      </tr>
+     </c:forEach>
     </tbody>
     <thead>
      <tr>
       <td></td>
-      <th align=center><button type="submit">Envoyer</button></th>
+      <th align=center><button type="submit" value="Login">Envoyer</button></th>
      </tr>
     </thead>
    </table>
@@ -1141,113 +1139,14 @@ tbody tr:hover {
   background: #014055;
 }
 \end{lstlisting}
-\subsection{Récupération des réponses par la base de données}
-
-Dans la classe DB, on introduit la fonction \textit{ updateQuetions()} qui prend en argument une liste des id des question et une autre contenant les réponses. Puis insère les réponses correspondant aux id dans la base de données en exécutant la requête :\\
-
-\textbf{UPDATE} `userdb`.`questions` \\
-\textbf{SET} `reponse` = ? \\
-\textbf{WHERE} (`id\_question` = ?)\\
-
-\lstset{language=java}
-\begin{lstlisting}
-public void updateQuestion(int[] idQuestions, int[] reponses){
-	loadDriver(dbDriver);
-	Connection con = getConnection();
-	String sql = "UPDATE `userdb`.`questions` 
-				  SET `reponse` = ? 
-				  WHERE (`id_question` = ?);";
-	PreparedStatement ps;
-	try {
-		for(int j = 0 ; j < idQuestions.length ; j++) {
-			ps = con.prepareStatement(sql);
-			ps.setInt(1, reponses[j]);
-			ps.setInt(2, idQuestions[j]);
-			ps.executeUpdate();
-		}
-		} catch (SQLException e) {
-			e.printStackTrace();
-	}
-}
-\end{lstlisting}
-
-
-
-Le bouton \textbf{'Envoyer'} fait appel à la servlet \textit{Utilisateur} qui, à son rôle, extrait les réponses et les id des questions et les insèrent dans la base de données à l'aide de \textit{updateQuestion()}.
-
-
-
-\begin{small}
-
-\begin{lstlisting}
-package web;
-
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import base_donnees.DB;
-
-@WebServlet("/utilisateur")
-public class Utilisateur extends HttpServlet {
-	protected void doPost(HttpServletRequest request, 
-						  HttpServletResponse response) 
-	throws ServletException, IOException {
-		String[] reponsesExtraits = request.getParameterValues("reponse");
-		String[] idQuestionsExtraits = request.getParameterValues("idQuestion");
-		int[] idQuestions = new int[idQuestionsExtraits.length];
-		int[] reponses = new int[reponsesExtraits.length];
-		for(int i =0 ;i<idQuestionsExtraits.length;i++) {
-			idQuestions[i] = Integer.parseInt(idQuestionsExtraits[i]);
-			reponses[i] = Integer.parseInt(reponsesExtraits[i]);
-		}
-		DB db_connexion = new DB();
-		db_connexion.updateQuestion(idQuestions, reponses);		
-		response.sendRedirect("EnvoieSucces.jsp");
-	}
-}
-\end{lstlisting}
-\end{small}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Résultat donné pour utilisateur "Ahmed" :\\
 
 \begin{center}
-\includegraphics[scale=0.4]{C:/Workplace/java/project/19.png}
+\includegraphics[scale=0.5]{C:/Workplace/java/project/19.png}
 \captionof{figure}{Interface utilisateur}
 \end{center}
-
-
-Au cas de succès de l'envoie des questions la page si dessous s'affiche
-
-\begin{center}
-\includegraphics[scale=0.5]{C:/Workplace/java/project/21.png}
-\end{center}
-
-
-Au cas où aucune question n'est posée pour cet utilisateur la page suivante s'affiche
-
-\begin{center}
-\includegraphics[scale=0.49]{C:/Workplace/java/project/20.png}
-\end{center}
-
-
-
 
 \section{Interface "RH"}
 
@@ -1276,7 +1175,6 @@ public class Formulaire {
 	public String getpsy() {
 	        return psychologue;
 	    }
-	 
 	 public void setpsy(String psychologue) {
 	        this.psychologue = psychologue;
 	    }
@@ -1286,13 +1184,7 @@ public class Formulaire {
     public void affectetat(boolean etat) {
 			this.etat =etat;
 		}
-	public void affectIdFormulaire(int id_formulaire) {
-        this.id_formulaire = id_formulaire;
-    }
-    
-	public int returnIdFormulaire() {
-        return id_formulaire;
-    }
+		
 
 }
 \end{lstlisting}
@@ -1302,7 +1194,7 @@ On déclare la fonction liste\_formulaire() qui prend en argument deux paramètr
 
 \lstset{language=java}
 \begin{lstlisting}
-	public void liste_formulaire(Session session, List<Formulaire> RH) {
+public void liste_formulaire(Session session, List<Formulaire> RH) {
         Statement statement = null;
         ResultSet resultat = null;
 
@@ -1310,24 +1202,23 @@ On déclare la fonction liste\_formulaire() qui prend en argument deux paramètr
         Connection connexion = getConnection();
         try {
             statement = connexion.createStatement();
-            resultat = statement.executeQuery("SELECT * FROM 
-            userdb.formulaires;");
+            resultat = statement.executeQuery("SELECT * FROM userdb.formulaires;");
             while (resultat.next()) {
                 String user = resultat.getString("nom");
                 String psy = resultat.getString("psychologue");
-                int id_formulaire = resultat.getInt("id_formulaire");
                 boolean etat = resultat.getBoolean("etat");
                 Formulaire formulaire = new Formulaire();
                 formulaire.setuser(user);
                 formulaire.affectetat(etat);
                 formulaire.setpsy(psy);
-                formulaire.affectIdFormulaire(id_formulaire);
                 RH.add(formulaire);
                 System.out.println(user);           }
         } catch (SQLException e) {
-          e.printStackTrace();}
+          e.printStackTrace();
             
         }
+       
+    }
 \end{lstlisting}
 
 \subsection{Affichage de formulaire}
@@ -1336,18 +1227,13 @@ Finalement, on fait un autre changement dans la partie RH de la servlet, on intr
 
 \lstset{language=java}
 \begin{lstlisting}
-else if(session.returnType().equals("RH")) {
+ else if(session.returnType().equals("RH")) {
 	List<Formulaire> RH = new ArrayList<Formulaire>();
 	connexion_db.liste_formulaire(session,RH);
-	if(RH.size() == 0)
-		response.sendRedirect("noFormulaire.jsp");
-	else {
 	request.setAttribute("RH", RH);
 	RequestDispatcher rst = request.getRequestDispatcher("RH.jsp");
-	rst.forward(request, response);}
-		  
-			
-		}
+	rst.forward(request, response);
+     }
 \end{lstlisting}
  Maintenant pour le fichier JSP ,la liste des utilisateurs et des psychologues est affichée par foreach
 \lstset{language=java}
@@ -1363,7 +1249,7 @@ else if(session.returnType().equals("RH")) {
 </head>
 <link href="RHCSS.css" rel="stylesheet" type="text/css">
 <body>
- <form  action="RH" method="post">
+ <form class=envoie action="envoie" method="post">
   <br>
   <br>
   <h1 align=center>Veuillez approuver les etats suivants</h1>
@@ -1383,11 +1269,10 @@ else if(session.returnType().equals("RH")) {
       <tr>
        <td><c:out value="${formulaire.getuser()}" /></td>
        <td><c:out value="${formulaire.getpsy()}" /></td>
-       <input type="hidden" name="id_formulaire" value="${formulaire.returnIdFormulaire()}"/>
        <td>
         <select name="etat" class="dropbtn">
-         <option value="0">Non</option>
-         <option value="1">Oui</option>
+         <option value="false">Non</option>
+         <option value="true">Oui</option>
         </select></td>
       </tr>
      </c:forEach>
@@ -1395,7 +1280,7 @@ else if(session.returnType().equals("RH")) {
     <thead>
      <tr>
       <td></td>
-      <th align=center><button type="submit" >Envoyer</button></th>
+      <th align=center><button type="submit" value="Login">Envoyer</button></th>
      </tr>
     </thead>
    </table>
@@ -1493,100 +1378,10 @@ tbody tr:hover {
 \captionof{figure}{Interface RH}
 \end{center}
 
-\subsection{Récupération des états par la base de données}
-Revenant à la classe DB, on rajoute la fonction updateliste\_formulaire qui prend en argument une liste des id des formulaires et une autre contenant les états.On peut insérer les états correspondant au id dans la base des données en exécutant la requête suivante:\\
-\textbf{UPDATE} `userdb`.`formulaires` \\
-\textbf{SET} `etat` = ? \\
-\textbf{WHERE} (`id\_formulaire` = ?)\\
 
 
 
-\lstset{language=java}
-\begin{lstlisting}
 
-       public void updateliste_formulaire(int[] id_formulaire, int[] etat) {
-    		loadDriver(dbDriver);
-    		Connection con = getConnection();
-    		String sql = "UPDATE `userdb`.`formulaires`  
-    		SET `etat` = ? WHERE (`id_formulaire` = ?);";
-    		PreparedStatement ps;
-    		try {
-    			for(int j = 0 ; j < id_formulaire.length ; j++) {
-    				ps = con.prepareStatement(sql);
-    				ps.setInt(1, etat[j]);
-    				ps.setInt(2, id_formulaire[j]);
-    				ps.executeUpdate();
-    			}
-    			} catch (SQLException e) {
-    				e.printStackTrace();
-    		}
-       
-       
-    }
-
-
-\end{lstlisting}
-   Le bouton \textbf{Envoyer} il fait appel à son rôle à la servlet \textbf{RH} qui fait extraire les états et les id des formulaire et les insèrent dans la base des données à l'aide de updateliste\_formulaire().
-   
-\lstset{language=java}
-\begin{lstlisting}
-package web;
-
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import base_donnees.DB;
-
-@WebServlet("/RH")
-public class RH extends HttpServlet {
-	
-	
-protected void doPost(HttpServletRequest request,  HttpServletResponse etats) throws ServletException, IOException {
-
-	
-String[] etatExtraits = request.getParameterValues("etat");
-
-String[] id_formulaireExtraits = request.getParameterValues("id_formulaire");
-
-int[] id_formulaire = new int[id_formulaireExtraits.length];
-
-int[] etat = new int[etatExtraits.length];
-
-for(int i =0 ;i<id_formulaireExtraits.length;i++) {
-    id_formulaire[i] = Integer.parseInt(id_formulaireExtraits[i]);
-    etat[i] = Integer.parseInt(etatExtraits[i]);
-   }
-DB db_connexion = new DB();
-
-db_connexion.updateliste_formulaire(id_formulaire, etat);	
-
-etats.sendRedirect("EnvoieSucces.jsp");
-}
-
-}
-\end{lstlisting}
-
-Résultat donné pour un RH :
-
-\begin{center}
-\includegraphics[scale=0.5]{C:/Workplace/java/project/22.png}
-\end{center}
-
-Après avoir cliquer sur le button \textbf{Envoyer}
-
-\begin{center}
-\includegraphics[scale=0.5]{C:/Workplace/java/project/23.png}
-\end{center}
-
-Au cas où aucun formulaire existe.
-
-\begin{center}
-\includegraphics[scale=0.5]{C:/Workplace/java/project/24.png}
-\end{center}
 
 
 
