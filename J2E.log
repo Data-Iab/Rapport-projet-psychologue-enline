@@ -1,119 +1,142 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.23)  22 DEC 2020 17:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.11.12)  23 DEC 2020 17:18
 entering extended mode
 **./J2E.tex
 (J2E.tex
-LaTeX2e <2020-10-01> patch level 2
-L3 programming layer <2020-10-27> xparse <2020-03-03>
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
-File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size10.clo"
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
-\c@part=\count175
-\c@section=\count176
-\c@subsection=\count177
-\c@subsubsection=\count178
-\c@paragraph=\count179
-\c@subparagraph=\count180
-\c@figure=\count181
-\c@table=\count182
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen138
+\bibindent=\dimen134
 )
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings
+.sty"
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.s
+ty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks15
+\KV@toks@=\toks14
 )
-\lst@mode=\count183
-\lst@gtempboxa=\box47
-\lst@token=\toks16
-\lst@length=\count184
-\lst@currlwidth=\dimen139
-\lst@column=\count185
-\lst@pos=\count186
-\lst@lostspace=\dimen140
-\lst@width=\dimen141
-\lst@newlines=\count187
-\lst@lineno=\count188
-\lst@maxwidth=\dimen142
+\lst@mode=\count175
+\lst@gtempboxa=\box45
+\lst@token=\toks15
+\lst@length=\count176
+\lst@currlwidth=\dimen135
+\lst@column=\count177
+\lst@pos=\count178
+\lst@lostspace=\dimen136
+\lst@width=\dimen137
+\lst@newlines=\count179
+\lst@lineno=\count180
+\lst@maxwidth=\dimen138
 
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
-File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count189
-\lst@skipnumbers=\count190
-\lst@framebox=\box48
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.
+sty"
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+\c@lstnumber=\count181
+\lst@skipnumbers=\count182
+\lst@framebox=\box46
 )
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
-File: listings.cfg 2020/03/24 1.8d listings configuration
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings
+.cfg"
+File: listings.cfg 2019/09/10 1.8c listings configuration
 ))
-Package: listings 2020/03/24 1.8d (Carsten Heinz)
+Package: listings 2019/09/10 1.8c (Carsten Heinz)
 
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
-Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\color.st
+y"
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
 
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\colo
+r.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
-)) (C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdft
+ex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.s
+ty"
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.
+sty"
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen143
-\captionmargin@=\dimen144
-\captionwidth=\dimen145
-\caption@tempdima=\dimen146
-\caption@indent=\dimen147
-\caption@parindent=\dimen148
-\caption@hangindent=\dimen149
+\captionmargin=\dimen139
+\captionmargin@=\dimen140
+\captionwidth=\dimen141
+\caption@tempdima=\dimen142
+\caption@indent=\dimen143
+\caption@parindent=\dimen144
+\caption@hangindent=\dimen145
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count191
-\c@continuedfloat=\count192
+\c@caption@flags=\count183
+\c@continuedfloat=\count184
 Package caption Info: listings package is loaded.
 )
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang1
+.sty"
+File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
-File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.
+sty"
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 )
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\subcaptio
+n.sty"
 Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
-\c@subfigure=\count193
-\c@subtable=\count194
+\c@subfigure=\count185
+\c@subtable=\count186
 )
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/graphics\Graphicx.sty
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\Graphicx
+.sty"
 
 LaTeX Warning: You have requested package `Graphicx',
                but the package provides `graphicx'.
 
-Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
-Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics
+.sty"
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty
+"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\grap
+hics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 )
-\Gin@req@height=\dimen150
-\Gin@req@width=\dimen151
-) (C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+\Gin@req@height=\dimen146
+\Gin@req@width=\dimen147
+)
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/setspace\setspace
+.sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
-) (C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/minitoc\minitoc.sty
+)
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/minitoc\minitoc.s
+ty"
 Package: minitoc 2018/07/12 v62 Package minitoc
 
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/minitoc\mtcmess.sty
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/minitoc\mtcmess.s
+ty"
 Package: mtcmess 2006/03/14
 )
 Package minitoc Info: I0001
@@ -129,17 +152,16 @@ Package minitoc Info: I0004
 (minitoc)             chapter level macros NOT available.
 Package minitoc Info: I0028
 (minitoc)             section level macros available.
-\mtc@toks=\toks17
-\mtc@strutbox=\box49
-\mtc@hstrutbox=\box50
+\mtc@toks=\toks16
+\mtc@strutbox=\box47
+\mtc@hstrutbox=\box48
 Package minitoc Info: I0002
 (minitoc)             Autoconfiguration of extensions.
 \openout3 = `J2E.mtc0'.
 
 \openout3 = `J2E.mtc'.
 
-
-(J2E.mtc0)
+ (J2E.mtc0)
 Package minitoc Info: I0012
 (minitoc)             Long extensions (Unix-like) will be used.
 Package minitoc Info: I0031
@@ -149,27 +171,29 @@ Package minitoc Info: I0031
 
 \openout3 = `J2E.mtc0'.
 
-\c@ptc=\count195
-\c@parttocdepth=\count196
+\c@ptc=\count187
+\c@parttocdepth=\count188
 \ptcindent=\skip51
-\c@stc=\count197
-\c@secttocdepth=\count198
+\c@stc=\count189
+\c@secttocdepth=\count190
 \stcindent=\skip52
 Package minitoc Info: I0010
 (minitoc)             The english language is selected.
 (minitoc)              on input line 4910.
 
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/minitoc\english.mld
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/minitoc\english.m
+ld"
 File: english.mld 2006/01/13
 )
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/minitoc\english.mld
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/minitoc\english.m
+ld"
 File: english.mld 2006/01/13
 ))
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdfte
-x.def
-File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count199
-\l__pdf_internal_box=\box51
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backe
+nd-pdfmode.def"
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count191
+\l__pdf_internal_box=\box49
 )
 
 LaTeX Warning: Unused global option(s):
@@ -192,24 +216,25 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
-\c@lstlisting=\count266
+\c@lstlisting=\count192
 
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-
+pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count267
-\scratchdimen=\dimen152
-\scratchbox=\box52
-\nofMPsegments=\count268
-\nofMParguments=\count269
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count270
-\MPscratchDim=\dimen153
-\MPnumerator=\count271
-\makeMPintoPDFobject=\count272
-\everyMPtoPDFconversion=\toks19
+\scratchcounter=\count193
+\scratchdimen=\dimen148
+\scratchbox=\box50
+\nofMPsegments=\count194
+\nofMParguments=\count195
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count196
+\MPscratchDim=\dimen149
+\MPnumerator=\count197
+\makeMPintoPDFobject=\count198
+\everyMPtoPDFconversion=\toks18
 )
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-bas
-e.sty
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epst
+opdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
@@ -244,8 +269,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 93.
 [1
 
-{C:/Users/MSI/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <C:/workplace/Java
-/project/inpt.png>] (J2E.toc [1])
+{C:/Users/meryam/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/workpla
+ce/Java/project/inpt.png>] (J2E.toc [1])
 \tf@toc=\write4
 \openout4 = `J2E.toc'.
 
@@ -738,7 +763,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
 
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
 1016.
-(C:\Users\MSI\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
+("C:\Users\meryam\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmtt.fd"
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 Overfull \hbox (23.54889pt too wide) in paragraph at lines 1019--1020
@@ -859,81 +884,101 @@ Overfull \hbox (2.63379pt too wide) in paragraph at lines 1246--1247
  []
 
 [36 <C:/Workplace/java/project/20.png>]
-Overfull \hbox (83.39917pt too wide) in paragraph at lines 1298--1299
+Overfull \hbox (1.49933pt too wide) in paragraph at lines 1289--1290
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (108.59912pt too wide) in paragraph at lines 1305--1306
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-] 
+][] 
  []
 
 
-Overfull \hbox (177.89899pt too wide) in paragraph at lines 1306--1307
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (7.79932pt too wide) in paragraph at lines 1308--1309
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (51.89923pt too wide) in paragraph at lines 1309--1310
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (26.69928pt too wide) in paragraph at lines 1310--1311
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (14.0993pt too wide) in paragraph at lines 1311--1312
-[][][][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (32.99927pt too wide) in paragraph at lines 1313--1314
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [37]
-Overfull \hbox (77.09918pt too wide) in paragraph at lines 1335--1336
+Overfull \hbox (7.79932pt too wide) in paragraph at lines 1316--1317
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (51.89923pt too wide) in paragraph at lines 1317--1318
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (89.69916pt too wide) in paragraph at lines 1318--1319
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (26.69928pt too wide) in paragraph at lines 1319--1320
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.0993pt too wide) in paragraph at lines 1320--1321
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (39.29926pt too wide) in paragraph at lines 1324--1325
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (77.09918pt too wide) in paragraph at lines 1346--1347
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
 
  []
 
-
-Overfull \hbox (45.59924pt too wide) in paragraph at lines 1343--1344
+[38]
+Overfull \hbox (45.59924pt too wide) in paragraph at lines 1356--1357
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (7.79932pt too wide) in paragraph at lines 1351--1352
+Overfull \hbox (7.79932pt too wide) in paragraph at lines 1364--1365
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[38]
-Overfull \hbox (39.29926pt too wide) in paragraph at lines 1356--1357
+
+Overfull \hbox (39.29926pt too wide) in paragraph at lines 1369--1370
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][] 
  []
 
 
-Overfull \hbox (14.0993pt too wide) in paragraph at lines 1371--1372
+Overfull \hbox (14.0993pt too wide) in paragraph at lines 1384--1385
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (7.79932pt too wide) in paragraph at lines 1372--1373
+Overfull \hbox (7.79932pt too wide) in paragraph at lines 1385--1386
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (158.99902pt too wide) in paragraph at lines 1384--1385
+Overfull \hbox (240.89886pt too wide) in paragraph at lines 1386--1387
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [39]
-Overfull \hbox (102.29913pt too wide) in paragraph at lines 1399--1400
+Overfull \hbox (77.09918pt too wide) in paragraph at lines 1398--1399
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (102.29913pt too wide) in paragraph at lines 1413--1414
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -943,13 +988,91 @@ Overfull \hbox (102.29913pt too wide) in paragraph at lines 1399--1400
 File: C:/Workplace/Java/project/Capture.PNG Graphic file (type png)
 <use C:/Workplace/Java/project/Capture.PNG>
 Package pdftex.def Info: C:/Workplace/Java/project/Capture.PNG  used on input l
-ine 1478.
+ine 1492.
 (pdftex.def)             Requested size: 354.57382pt x 158.84303pt.
 
-Overfull \hbox (9.57382pt too wide) in paragraph at lines 1478--1479
+Overfull \hbox (9.57382pt too wide) in paragraph at lines 1492--1493
  [] 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 1497--1501
+
+ []
+
+[42 <C:/Workplace/Java/project/Capture.PNG>]
+Overfull \hbox (133.79907pt too wide) in paragraph at lines 1507--1508
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.49933pt too wide) in paragraph at lines 1510--1511
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+ []
+
+
+Overfull \hbox (14.0993pt too wide) in paragraph at lines 1511--1512
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (64.4992pt too wide) in paragraph at lines 1514--1515
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][] 
+ []
+
+[43]
+Overfull \hbox (385.79858pt too wide) in paragraph at lines 1548--1551
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (26.69928pt too wide) in paragraph at lines 1551--1553
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (140.09906pt too wide) in paragraph at lines 1553--1555
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.99927pt too wide) in paragraph at lines 1555--1557
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (70.7992pt too wide) in paragraph at lines 1560--1561
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (32.99925pt too wide) in paragraph at lines 1565--1567
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+<C:/Workplace/java/project/22.png, id=177, 646.66594pt x 359.09157pt>
+File: C:/Workplace/java/project/22.png Graphic file (type png)
+<use C:/Workplace/java/project/22.png>
+Package pdftex.def Info: C:/Workplace/java/project/22.png  used on input line 1
+576.
+(pdftex.def)             Requested size: 323.33217pt x 179.54533pt.
+[44]
+<C:/Workplace/java/project/23.png, id=181, 602.25pt x 240.14719pt>
+File: C:/Workplace/java/project/23.png Graphic file (type png)
+<use C:/Workplace/java/project/23.png>
+Package pdftex.def Info: C:/Workplace/java/project/23.png  used on input line 1
+582.
+(pdftex.def)             Requested size: 301.12425pt x 120.07329pt.
+<C:/Workplace/java/project/24.png, id=182, 581.92406pt x 209.28188pt>
+File: C:/Workplace/java/project/24.png Graphic file (type png)
+<use C:/Workplace/java/project/24.png>
+Package pdftex.def Info: C:/Workplace/java/project/24.png  used on input line 1
+588.
+(pdftex.def)             Requested size: 290.96132pt x 104.64067pt.
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the J2E.maf file.
@@ -958,33 +1081,35 @@ Package minitoc Info: I0009
 Package minitoc(hints) Info: I0019
 (minitoc(hints))             No hints have been written 
 (minitoc(hints))             in the J2E.log file..
-[42 <C:/Workplace/Java/project/Capture.PNG>] (J2E.aux) ) 
+ [45 <C:/Workplace/java/project/22.png> <C:/Workplace/java/project/23.png> <C:/
+Workplace/java/project/24.png>] (J2E.aux) ) 
 Here is how much of TeX's memory you used:
- 6576 strings out of 479799
- 99896 string characters out of 2870672
- 555694 words of memory out of 3000000
- 23311 multiletter control sequences out of 15000+200000
- 540924 words of font info for 49 fonts, out of 3000000 for 9000
+ 6548 strings out of 481556
+ 99532 string characters out of 2913400
+ 502560 words of memory out of 3000000
+ 21535 multiletter control sequences out of 15000+200000
+ 538174 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,13n,72p,466b,1688s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\MSI\AppData\
-Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1000.pk> <C:\Users\MSI\AppD
-ata\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt0900.pk> <C:\Users\MSI\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/M
-SI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/
-Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.p
-fb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mcsc10.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmr5.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmss12.pfb><C:/Users/MSI/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/MSI/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/MSI/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/MSI/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on J2E.pdf (43 pages, 1174114 bytes).
+ 39i,13n,51p,443b,1686s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\meryam\AppData\Local\MiKT
+eX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1000.pk> <C:\Users\meryam\AppData
+\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tctt0900.pk> <C:\Users\mer
+yam\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:
+/Users/meryam/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmbx10.pfb><C:/Users/meryam/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb><C:/Users/meryam/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/meryam/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/meryam/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/mery
+am/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb>
+<C:/Users/meryam/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmssbx10.pfb><C:/Users/meryam/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmti10.pfb><C:/Users/meryam/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/meryam/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on J2E.pdf (46 pages, 1197491 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
+ 235 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 
