@@ -326,7 +326,7 @@ Recommandation & \begin{tabular}[c]{@{}l@{}}id\\ objet \\ contenuRecommandation\
 
 La figure ci-dessous récapitule le tableau précédent dans un diagramme de classe réalisé à l'aide de l'outil Enterprise Architect et qui englobe toutes les informations qu'on a cité avant:
 \begin{center}
-\includegraphics[scale=0.6]{C:/Users/meryam/Videos/Model.png}
+\includegraphics[scale=0.6]{C:/Workplace/java/project/Model.png}
 \captionof{figure}{Diagramme de classe}
 \end{center}
 
@@ -850,8 +850,6 @@ La création des deux tableaux consiste à lancer les deux requêtes :\\
 \captionof{figure}{table questions}
 \end{center}
 
-\textcolor{maroon}{NOTE : Pour éviter la confusion entre les id des formulaires et ceux des questions, les id des formulaires débuteraient toujours par un "10" (exemple : 101, 102 ...) alors que ceux des questions débuteraient avec un "20" (exemple : 201 202 ...)}\\
-
 
 Insérant par suite quelques données dans les tables pour qu'elles nous aident pendant la construction des interfaces des utilisateurs (formulaire 101 avec 2 questions 201 et 202 et formulaire 102 avec une question 203)\\
 
@@ -1292,91 +1290,582 @@ Finalement, on fait un autre changement dans la partie RH de la servlet, on intr
 \end{lstlisting}
  
 \subsection{Partie CSS}
-Le fichier CSS décrivant la page RH est donné par:
-\lstset{language=java}
-\begin{lstlisting}
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
-h1{
-	 font-size: 20px;
-	 font-family: 'Courier New';
-	 color : white;
-}
-button {
-  background-color: white;
-  color: black;
-  display:inline-block;
-  padding: 10px 30px;
-  border-radius: 10px;
-  font-size: 20px;
-  margin: 30px 0;
-  border: none;
-  cursor: pointer;
-  display: inline-block;
-  transition: all 0.25s;
-}
+Le fichier CSS décrivant la page RH est celui de l'utilisateur.
 
-button:hover {
-  opacity: 0.8;
-  background-color: #E2B842;
-  color: white;
-}
-
-*, *:before, *:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.dropbtn {
-  background-color: #012B39;
-  color: #ffffff;
-  padding: 10px 30px;
-  font-size: 15px;
-  border: none;
-  cursor: pointer;
-}
-body {
-  background: #105469;
-  font-family: 'Open Sans', sans-serif;
-}
-table {
-  width: 70%;
-  background: #012B39;
-  border-radius: 0.25em;
-  border-collapse: collapse;
-  margin: 1em;
-}
-th {
-  border-bottom: 1px solid #364043;
-  color: #E2B842;
-  font-size: 20px;
-  font-weight: 600;
-  padding: 0.5em 1em;
-  text-align: Left;
-}
-td {
-  color: #fff;
-  font-weight: 400;
-  padding: 0.65em 1em;
-}
-.disabled td {
-  color: #4F5F64;
-}
-tbody tr {
-  transition: background 0.25s ease;
-}
-tbody tr:hover {
-  background: #014055;
-}
-
-
-\end{lstlisting}
-
- Et on obtient le resultat suivant:
+On obtient le résultat suivant:
 
 \begin{center}
 \includegraphics[scale=0.5]{C:/Workplace/Java/project/Capture.PNG}
 \captionof{figure}{Interface RH}
 \end{center}
+
+
+
+
+\newpage
+
+
+
+
+
+
+
+
+
+\section{Interface "Psychologue"}
+
+\subsection{Affichage des formulaires}
+
+Un psychologue doit être capable de voir les réponses de ses patients aux formulaires crées. Si le formulaire n'est pas encore approuvé par le RH ou respectivement le patient n'a pas encore répondu, le message 'PAS ENCORE APPROUVE' respectivement 'EN ATTENTE' doivent êtres affichés.\\
+Définissons dans un premier temps les deux fonctions :\\
+\begin{itemize}
+\item liste\_formulaire\_psychologue() qui prend en argument le nom du psychologue et une liste des objets de la classe \textit{Formulaire} puis ajoute à cette liste les formulaires récupérés par la requête :\\
+
+\begin{small}
+\textbf{SELECT} * \textbf{FROM} userdb.formulaires f \textbf{WHERE} f.psychologue = ?
+\end{small}
+
+\begin{footnotesize}
+
+\begin{lstlisting}
+public void liste_formulaire_psychologue(String nom, List<Formulaire> formulaires) {
+
+	loadDriver(dbDriver);
+	PreparedStatement ps;
+	Connection con = getConnection();
+	String sql = "SELECT * FROM userdb.formulaires f where f.psychologue = ?";
+
+	try {
+		ps = con.prepareStatement(sql);
+		ps.setString(1, nom);
+		ResultSet resultat = ps.executeQuery();
+		while (resultat.next()) {
+			String user = resultat.getString("nom");
+			String psy = resultat.getString("psychologue");
+			boolean etat = resultat.getBoolean("etat");
+			int id_formulaire = resultat.getInt("id_formulaire");
+			Formulaire formulaire = new Formulaire();
+			formulaire.setuser(user);
+			formulaire.affectetat(etat);
+			formulaire.setpsy(psy);
+			formulaire.affectIdFormulaire(id_formulaire);
+			formulaires.add(formulaire);
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+}
+\end{lstlisting}
+
+
+
+\end{footnotesize}
+
+
+
+
+
+\item question\_utilisateur\_psychologue() qui prend en argument le nom de l'utilisateur et une liste des objets de la classe \textit{Question} puis ajoute à cette liste les questions récupérés par la requête :\\\\
+\begin{small}
+\textbf{SELECT} * \textbf{FROM} userdb.questions q \\
+\textbf{INNER JOIN} userdb.formulaires f \\
+\textbf{ON} f.id\_formulaire=q.id\_formulaire \textbf{WHERE} f.nom=?
+\end{small}
+
+\end{itemize}
+
+
+\begin{footnotesize}
+\begin{lstlisting}
+public void question_utilisateur_psychologue(String Psychologue,
+											 List<Question> userquestion) {
+	boolean status;
+
+	loadDriver(dbDriver);
+	Connection con = getConnection();
+	String sql = "SELECT * FROM userdb.questions q 
+				  INNER JOIN userdb.formulaires f 
+				  ON f.id_formulaire=q.id_formulaire WHERE f.nom=?";
+	PreparedStatement ps;
+	try {
+		ps = con.prepareStatement(sql);
+		ps.setString(1, Psychologue);
+		ResultSet rs = ps.executeQuery();
+		status = rs.next();
+		while (status) {
+			Question question = new Question();
+			question.affectIdQuestion(rs.getInt("id_question"));
+			question.affectIdFormulaire(rs.getInt("id_formulaire"));
+			question.affectReponse(rs.getBoolean("reponse"));
+			question.affectQuestion(rs.getString("question"));
+			question.affectEtatQuestion(rs.getString("reponse"));
+			userquestion.add(question);
+			status = rs.next();
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+}
+
+\end{lstlisting}
+\end{footnotesize}
+
+
+
+\newpage
+
+Ensuite dans la servlet login, au cas ou le type l'utilisateur identifié est de type psychologue on exécute les lignes si dessous
+
+\begin{footnotesize}
+\begin{lstlisting}
+if (session.returnType().equals("Psychologue")) {
+	List<Formulaire> formulaires = new ArrayList<Formulaire>();
+	List<Question> userquestion = new ArrayList<Question>();
+	
+	connexion_db.liste_formulaire_psychologue(session.returnNom(), formulaires);
+	connexion_db.question_utilisateur_psychologue(session.returnNom(), userquestion);
+	
+	request.setAttribute("psy", session.returnNom());
+	request.setAttribute("userquestion", userquestion);
+	request.setAttribute("formulaires", formulaires);
+	RequestDispatcher rst = request.getRequestDispatcher("Psychologue.jsp");
+	rst.forward(request, response);
+\end{lstlisting}
+\end{footnotesize}
+
+
+
+Le reste du travaille serait dans le fichier Psychologue.jsp :\\
+Le premier attribue "psy" contenant le nom du psychologue serait la valeur d'une input de type caché car on se servira d'elle dans la création des formulaires.\\
+
+A l'aide des 2 listes (userquestion et formulaires) envoyées vers ce fichier, on doit assurer un affichage des questions et leurs états.\\
+
+Pour chaque formulaire, une table est crée ( foreach ligne 19 )  puis pour chaque table on affichera que les questions qui appartient à ce formulaire ( test if en ligne 30 ).\\
+
+Finalement la colonne réponse assurera les états des questions :
+\begin{enumerate}
+\item Si le formulaire est approuvé par le RH ( ligne 38 ) on aura deux cas
+\begin{itemize}
+\item Le patient n'a pas encore répondu ( ligne 40 ), on affichera "EN ATTENTE".
+\item Le patient a répondu, on affichera la réponse ( ligne 44 ).
+\end{itemize} 
+\item Sinon, le RH n'a pas encore approuvé ( ligne 48 ) on affichera "PAS ENCORE APPROUVE"
+\end{enumerate}
+
+
+\newpage
+
+
+
+
+\begin{footnotesize}
+\lstset{language=XML}
+\begin{lstlisting}
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<input type="hidden" name="Psychologue" value="${psy}" />
+<title>Psychologue ${psy}</title>
+</head>
+<link href="UtilisateurCSS.css" rel="stylesheet" type="text/css">
+<body>
+ <br>
+ <form action="NouveauFormulaire" method="post">
+ <h1 align="center">
+  <button type="submit">Nouveau formulaire</button>
+ </h1>
+ <input type="hidden" name="Psychologue" value="${psy}" />
+ </form>
+ <c:forEach items="${formulaires}" var="formulaire">
+  <div class="container">
+   <table align="center">
+    <thead>
+     <tr>
+      <th><c:out value="${formulaire.getuser()}" /></th>
+      <th>reponses</th>
+     </tr>
+    </thead>
+    <tbody>
+     <c:forEach items="${userquestion}" var="question">
+     <c:if test="${question.returnIdformulaire() == formulaire.returnIdFormulaire()}">
+      <tr>
+       <td>
+        <c:out value="${question.returnQuestion()}" />
+       </td>
+       <input type="hidden" name="idQuestion" value="${question.returnIdQuestion()}" />
+       <td>
+        <c:choose>	
+         <c:when test="${formulaire.returnetat()}">
+          <c:choose>
+		   <c:when test="${question.returnEtatQuestion() == null}">
+			<c:out value = "EN ATTENTE"/>
+		   </c:when>
+		   <c:otherwise>
+			<c:out value="${question.returnReponse() ? 'Oui':'Non'}"/>
+		   </c:otherwise>
+		  </c:choose>
+		 </c:when>
+   		 <c:otherwise>
+		  <c:out value="PAS ENCORE APPROUVE"/>
+		 </c:otherwise>
+		</c:choose>
+	   </td>
+	   </tr>
+	  </c:if>
+	 </c:forEach>
+	</tbody>
+   </table>
+  </div>
+ </c:forEach>
+</body>
+</html>
+\end{lstlisting}
+\end{footnotesize}
+
+
+
+
+Un exemple de résultat :
+
+
+\begin{center}
+\includegraphics[scale=0.4]{C:/Workplace/Java/project/25.PNG}
+\captionof{figure}{Interface Psychologue}
+\end{center}
+
+
+
+\subsection{Création des formulaires}
+
+
+
+Le bouton "Nouveau formulaire" doit rediriger le psychologue vers une autre page dans laquelle il peut construire ses propres formulaires.\\
+
+La première tache consiste a choisir le destinataire. De ce fait, on définit la fonction liste\_destinataires() (Classe DB) qui retourne l'ensemble des utilisateurs existant dans la base de données.
+\newpage
+
+
+
+\begin{footnotesize}
+\lstset{language=java}
+\begin{lstlisting}
+public List<String> liste_destinataires() {
+	List<String> liste = new ArrayList<String>();
+	loadDriver(dbDriver);
+	PreparedStatement ps;
+	Connection con = getConnection();
+	String sql = "SELECT * FROM userdb.login l Where l.typeuser = 'Utilisateur'";
+	try {
+		ps = con.prepareStatement(sql);
+		ResultSet rst = ps.executeQuery();
+		while (rst.next()) {
+			String user = rst.getString("nom");
+			liste.add(user);
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+
+	return liste;
+}
+\end{lstlisting}
+\end{footnotesize}
+
+
+
+Puis une autre fonction EntrerFormulaireEtQuestions() qui prend en argument le nom du psychologue, le nom de l'utilisateur et une liste des questions puis insère dans la base de données un nouveau formulaire dans la table "Formulaires" et la liste des question dans la table "Questions".\\
+
+Avant l'insertion, on doit s'assurer de l'unicité des id. Pour chaque question/formulaire on doit extraire le dernier id existant dans la table et l'incrémenter.
+
+
+
+
+
+\begin{footnotesize}
+\lstset{language=java}
+\begin{lstlisting}
+public void EntrerFormulaireEtQuestions(String Psychologue, 
+										String Utilisateur, 
+										List<String> QuestionText) {
+	loadDriver(dbDriver);
+	Connection con = getConnection();
+	String sqlFormulaire = "INSERT INTO `userdb`.`formulaires` 
+						   (`id_formulaire`, `nom`, `psychologue`, `etat`) 
+						   VALUES (?, ?, ?, '0')";
+						   
+	String maxIdFormulaire = "SELECT max(userdb.formulaires.id_formulaire) 
+							  AS 'maxIdFormulaire' FROM userdb.formulaires";
+							  
+	String sqlQuestion = "INSERT INTO `userdb`.`questions` 
+						  (`id_question`, `id_formulaire`, `question`) 
+						  VALUES (?, ?, ?)";
+						  
+	String maxIdQuestion = "SELECT max(userdb.questions.id_question) 
+							AS 'maxIdQuetion' FROM userdb.questions";
+							
+	int IdFormulaire = 0;
+	int IdQuestion = 0;
+	PreparedStatement ps;
+		try {
+			ps = con.prepareStatement(maxIdFormulaire);
+			ResultSet resultat = ps.executeQuery();
+			if (resultat.next())
+				IdFormulaire = resultat.getInt("maxIdFormulaire") + 1;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		try {
+			ps = con.prepareStatement(maxIdQuestion);
+			ResultSet resultat = ps.executeQuery();
+			if (resultat.next())
+				IdQuestion = resultat.getInt("maxIdQuetion") + 1;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		try {
+			ps = con.prepareStatement(sqlFormulaire);
+			ps.setInt(1, IdFormulaire);
+			ps.setString(2, Utilisateur);
+			ps.setString(3, Psychologue);
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		try {
+			int i = 0;
+			for (String question : QuestionText) {
+				ps = con.prepareStatement(sqlQuestion);
+				ps.setInt(1, IdQuestion + i);
+				ps.setInt(2, IdFormulaire);
+				ps.setString(3, question);
+				ps.executeUpdate();
+				i++;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+\end{lstlisting}
+\end{footnotesize}
+
+
+
+
+
+Finalement, le psychologue doit être capable de :\\
+\begin{itemize}
+\item Ajouter une question au formulaire.
+\item Voir les question ajoutées.
+\item Supprimer une question indésirable.
+\item Envoyer le formulaire.
+\end{itemize}
+
+
+On vous représente la servlet et le fichier NouveauFormulaire.jsp puis on les expliques.\\
+\newpage
+Servlet :
+
+\begin{scriptsize}
+\lstset{language=java}
+\begin{lstlisting}
+package web;
+import java.io.IOException;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.*;
+import base_donnees.DB;
+@WebServlet("/NouveauFormulaire")
+public class NouveauFormulaire extends HttpServlet {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		DB connexion_db = new DB();
+		List<String> QuestionText = new ArrayList<String>();
+		String NouvelleQuestion = request.getParameter("QuestionText");
+		String[] AnciennesQuestions = request.getParameterValues("AncienneQuestionText");
+		String Psychologue = request.getParameter("Psychologue");
+		String action = request.getParameter("Formulaire_envoyer");
+		List<String> Destinataires = connexion_db.liste_destinataires();
+		
+		try {
+			for (String q : AnciennesQuestions) {
+				QuestionText.add(q);
+			}
+		} catch (Exception e) {;}
+
+		if (NouvelleQuestion != "") {
+			QuestionText.add(NouvelleQuestion);
+		}
+
+		try {
+			int element_supprimer = Integer.parseInt(request.getParameter("SupprimerButton"));
+			QuestionText.remove(element_supprimer);
+		} catch (Exception e) {;}
+
+		if((action != null) &&(QuestionText.size() > 0)) {
+			String Destinatiare = request.getParameter("Destinataire");
+			connexion_db.EntrerFormulaireEtQuestions(Psychologue, Destinatiare, QuestionText);
+			while(QuestionText.size() > 0) {
+				QuestionText.remove(0);
+			}
+		}
+		request.setAttribute("Destinataires", Destinataires);
+		request.setAttribute("QuestionText", QuestionText);
+		request.setAttribute("psy", Psychologue);
+		RequestDispatcher rst = request.getRequestDispatcher("NouveauFormulaire.jsp");
+		rst.forward(request, response);
+	}
+}
+\end{lstlisting}
+\end{scriptsize}
+
+
+
+\newpage
+
+
+NouveauFormulaire.jsp :
+
+\begin{scriptsize}
+
+\lstset{language=XML}
+\begin{lstlisting}
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nouveau Formulaire</title>
+</head>
+<link href="NouveauFormulaireCSS.css" rel="stylesheet">
+<body>
+ <form action="NouveauFormulaire" method="post">
+ <input type="hidden" name="Psychologue" value="${psy}" />
+  <br> <br>
+  <h1 align=center>Nouveau formulaire</h1>
+  <br> <br>
+  <div>
+   <table align=center>
+    <thead>
+     <tr>
+	  <th>Destinataire</th>
+	  <th><select name="Destinataire" class="dropbtn">
+	   <c:forEach items="${Destinataires}" var="Dest">
+		<option value="${Dest}">${Dest}</option>
+	   </c:forEach>
+	   </select></th>
+	 </tr>
+     <tr>
+	  <th><input name="QuestionText" placeholder="Ajoutez une question"></th>
+	  <th><button type="submit">Ajouter</button></th>
+	 </tr>
+	 <tr>
+	  <th>Questions</th>
+	  <th></th>
+	 </tr>
+	<tbody>
+     <c:forEach items="${QuestionText}" var="qst" varStatus="loop">
+	  <tr>
+	    <td><c:out value="${qst}" /></td>
+		 <input type="hidden" name="AncienneQuestionText" value="${qst}" />
+		<td>
+ 		 <button type="submit" class="supprimer" 
+ 		         name="SupprimerButton" value="${loop.index}">Supprimer</button>
+		</td>
+	  </tr>
+	  </c:forEach>
+	</tbody>
+  </table>
+  <h1 align=center>
+   <button type="submit" name="Formulaire_envoyer" value="Envoyer">Envoyer</button>
+  </h1>
+ </div>
+ </form>
+</body>
+</html>
+
+\end{lstlisting}
+
+\end{scriptsize}
+
+
+
+
+
+Le problème de cette page était que à chaque fois le psychologue ajoute une question, les variables de la servlet se réinitialisent et on perd donc la question entrée avant. L'idée était d'introduire la liste des chaines "AnciennesQuestions" qui serait stocker en tant que input de type hidden (ligne 39 du jsp).\\
+
+Lors de l'ajout de la question, on récupérera premièrement les questions précédentes puis on leurs ajoute la nouvelle question (ligne 30).\\
+
+Les boutons "supprimer" associés a chaque question ajoutée renferme la valeur loop.index qui est équivalent à l'index de la question dans la liste "QuestionText". Au cas de suppression, on enlève la question de la liste ( ligne 35 servlet ).\\
+
+Au cas de l'envoie ( ligne 28 servlet ) on insere les questions à l'aide de la fonction EntrerFormulaireEtQuestions() et on vide la liste.\\
+
+
+
+On aura le résultat suivant 
+
+
+
+
+\begin{center}
+\includegraphics[scale=0.4]{C:/Workplace/Java/project/26.PNG}
+\captionof{figure}{Nouveau Formulaire}
+\end{center}
+
+
+Au cas de l'envoie 
+
+
+\begin{center}
+\includegraphics[scale=0.4]{C:/Workplace/Java/project/27.PNG}
+\captionof{figure}{Interface psychologue}
+\end{center}
+
+Le formulaire serait aussi affiché chez le RH.
+
+
+
+\begin{center}
+\includegraphics[scale=0.4]{C:/Workplace/Java/project/28.PNG}
+\captionof{figure}{Interface RH}
+\end{center}
+
+
+Au cas de l'approuvement la question serait affichée à l'utilisateur
+
+
+
+\begin{center}
+\includegraphics[scale=0.4]{C:/Workplace/Java/project/29.PNG}
+\captionof{figure}{Interface Utilisateur}
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
