@@ -188,9 +188,10 @@ Le diagramme suivant est réalisé à l'aide de l'outil \textbf{Enterprise  Arch
 \end{center}
 \newpage
 \subsection{Description textuelle des principaux cas d'utilisation}
-
 \begin{itemize}
+
 \item Description textuelle du cas d'utilisation "S'authentifier"
+\begin{scriptsize}
 
 \begin{tabular}{|l|l|}
 \hline
@@ -202,6 +203,7 @@ Post condition    & Permet à l'acteur d'accéder à son propre espace          
 Scénario nominal  & \begin{tabular}[c]{@{}l@{}}1-Le système invite l'acteur à entrer son login et son mot de passe.\\ \\ 2-L'acteur saisit le login et le mot de passe.\\ \\ 3-le système vérifie les paramètres.\\ \\ 4-Le système affiche l'espace correspondant à l'acteur.\\ \\ 5-l'instance de cas d'utilisation se termine.\end{tabular} \\ \hline
 Exception         & Si un des champs est erroné , le système actualise à nouveau la page                                                                                                                                                                                                                                                       \\ \hline
 \end{tabular}
+\end{scriptsize}
 
 
 
@@ -213,6 +215,7 @@ Exception         & Si un des champs est erroné , le système actualise à nouv
 
 
 
+\begin{scriptsize}
 
 \begin{tabular}{|l|l|}
 \hline
@@ -224,10 +227,12 @@ Scénario nominal  & \begin{tabular}[c]{@{}l@{}}1-Une mappe s'affiche contient l
 Exception         & Pas d'exception                                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
 \end{tabular}
 
+\end{scriptsize}
 
 
 \item Description textuelle du cas d'utilisation "Affecter le questionnaire"
 
+\begin{scriptsize}
 
 \begin{tabular}{|l|l|}
 \hline
@@ -238,12 +243,14 @@ Post condition    & Approuver le questionnaire                                  
 Scénario nominal  & \begin{tabular}[c]{@{}l@{}}1-Une mappe s'affiche contient un tableau des noms des utilisateurs avec \\ leurs psychologues et les états.\\ 2-L'acteur peut approuver le questionnaire par sélectionner oui dans la\\ case état et le rejeter par sélectionner non \\ \\ 3-L'acteur fait envoyer les informations  à l'aide du buttons envoyer.\end{tabular} \\ \hline
 Exception         & Pas d'exception                                                                                                                                                                                                                                                                                                                                            \\ \hline
 \end{tabular}
+\end{scriptsize}
 
 \item Description textuelle du cas d'utilisation "Répondre au questionnaire"
 
 
 
 
+\begin{scriptsize}
 \begin{tabular}{|l|l|}
 \hline
 Cas d'utilisation & Répondre au questionnaire                                                                                                                                                                                                                                                                   \\ \hline
@@ -253,6 +260,7 @@ Post condition    & Répondre au questionnaire                                  
 Scénario nominal  & \begin{tabular}[c]{@{}l@{}}1-Une mappe s'affiche contient des questions et une case pour sélectionner\\  le choix\\ 2-L'acteur peut répondre par oui ou non en sélectionnant dans le case\\  répondre\\ 3-L'acteur fait envoyer les informations  à l'aide du buttons envoyer.\end{tabular} \\ \hline
 Exception         & Pas d'exception                                                                                                                                                                                                                                                                             \\ \hline
 \end{tabular}
+\end{scriptsize}
 
 \end{itemize}
 \subsection{Conclusion}
@@ -331,6 +339,11 @@ La figure ci-dessous récapitule le tableau précédent dans un diagramme de cla
 \end{center}
 
 
+\newpage
+
+
+
+
 \section{Page Login}
 \subsection{Page d'identification}
 \indent
@@ -338,7 +351,7 @@ La figure ci-dessous récapitule le tableau précédent dans un diagramme de cla
 Créons premièrement un fichier Login.jsp dans lequel on aura la description de la page d'identification des différents utilisateurs.
 
 \lstset{language=XML}
-\begin{small}
+\begin{scriptsize}
 \begin{lstlisting}
 <!DOCTYPE html>
 <html>
@@ -371,8 +384,7 @@ Créons premièrement un fichier Login.jsp dans lequel on aura la description de
 </body>
 </html>
 \end{lstlisting}
-\end{small}
-\newpage
+\end{scriptsize}
 On aura le resultat simple suivant\\
 
 \begin{center}
@@ -389,6 +401,7 @@ On aura le resultat simple suivant\\
 \subsubsection{Classe Session}
 On aura besoin d'une classe \textit{Session} (package : loginsesssion) qui va récupérer pendant chaque identification le nom et le mot de passe entrés.\\
 
+\begin{scriptsize}
 \lstset{language=java}
 \begin{lstlisting}
 
@@ -412,11 +425,15 @@ public class session {
 }
 
 \end{lstlisting}
+\end{scriptsize}
 
-\newpage
 \subsubsection{Classe DB}
 
 La classe DB (Package : base\_donnees) va permettre dans un premier lieux la connexion avec une base de données MySQL (userdb) qu'on va créer par la suite, puis vérifie si les identifiants (nom et mot de passe) entrés figurent dans cette base.\\
+
+\newpage
+
+\begin{scriptsize}
 \lstset{language=java}
 \begin{lstlisting}
 package base_donnees;
@@ -476,6 +493,7 @@ public class DB {
 	}
 }
 \end{lstlisting}
+\end{scriptsize}
 
 
 \subsubsection{Création de la base de données "userdb"}
@@ -512,38 +530,12 @@ Dans le package web, introduisant la première servlet qui va se servir de l'aut
 
 Pour cela, ajoutons un simple fichier Succes.jsp \\
 
-\lstset{language=XML}
-\begin{lstlisting}
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Succes</title>
-</head>
-<body>
-Succes
-</body>
-</html>
-\end{lstlisting}
-
-
-\newpage
 
 Puis la servlet serait comme suit :\\
 
+\begin{scriptsize}
 \lstset{language=java}
 \begin{lstlisting}
-package web;
-
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import base_donnees.*;
-import loginsession.*;
-
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	
@@ -568,6 +560,7 @@ public class LoginServlet extends HttpServlet {
 }
 
 \end{lstlisting}
+\end{scriptsize}
 
 
 
@@ -599,6 +592,7 @@ Après l'authentification, l'inscrit doit être diriger vers sa page personnelle
 
 Ensuite on doit modifier la classe \textit{Session} en ajoutant le String type et les méthodes affectType et returnType.\\
 
+\begin{scriptsize}
 \lstset{language=java}
 \begin{lstlisting}
 package loginsession;
@@ -628,12 +622,14 @@ public class Session {
 }
 
 \end{lstlisting}
+\end{scriptsize}
 
 \newpage
 Pour la classe DB, pendant la validation des identifiants (valide\_donnees), on récupère le type de l'inscrit et on affecte sa valeur à userType en faisant appel à affectType\\
 
 
 
+\begin{scriptsize}
 \lstset{language=java}
 \begin{lstlisting}
 public boolean valider_donees(Session session)
@@ -657,11 +653,13 @@ public boolean valider_donees(Session session)
 	return status;
 }
 \end{lstlisting}
+\end{scriptsize}
 
 \newpage
 
 Finalement la servlet doit diriger chaque type d'inscrit vers sa page personnelle (Psychologue.jsp, RH.jsp ou Utilisateur.jsp)\\
 
+\begin{scriptsize}
 \lstset{language=java}
 \begin{lstlisting}
 @WebServlet("/login")
@@ -695,6 +693,7 @@ public class LoginServlet extends HttpServlet {
 
 }
 \end{lstlisting}
+\end{scriptsize}
 
 
 \subsection{Partie CSS}
@@ -702,6 +701,7 @@ public class LoginServlet extends HttpServlet {
 Pour finir cette partie, introduisant un fichier css \textit{loginCSS.css} pour les raisons esthétiques.\\
 
 
+\begin{scriptsize}
 
 \lstset{language=CSS}
 \begin{lstlisting}
@@ -750,6 +750,7 @@ body {
 }
 
 \end{lstlisting}
+\end{scriptsize}
 
 
 
@@ -757,7 +758,7 @@ le fichier \textit{login.jsp} sera aussi changé
 
 
 \lstset{language=XML}
-\begin{small}
+\begin{scriptsize}
 \begin{lstlisting}
 <!DOCTYPE html>
 <html>
@@ -784,7 +785,7 @@ le fichier \textit{login.jsp} sera aussi changé
 </body>
 </html>
 \end{lstlisting}
-\end{small}
+\end{scriptsize}
 
 
 Résultat final :
@@ -881,6 +882,7 @@ La première étape consiste à créer une classe \textit{Question} (Similaire �
 
 
 
+\begin{scriptsize}
 
 \lstset{language=java}
 \begin{lstlisting}
@@ -920,6 +922,7 @@ public class Question {
 }
 \end{lstlisting}
 
+\end{scriptsize}
 
 \subsection{Chargement des questions depuis la base de données}
 
@@ -938,7 +941,7 @@ Le champ f.nom serait remplis par session.nom.
 
 
 
-\begin{small}
+\begin{scriptsize}
 \lstset{language=java}
 \begin{lstlisting}
 public void question_utilisateur(Session session, List<Question> userquestion)
@@ -973,7 +976,7 @@ public void question_utilisateur(Session session, List<Question> userquestion)
 	}
 \end{lstlisting}
 
-\end{small}
+\end{scriptsize}
 
 
 
@@ -982,7 +985,7 @@ public void question_utilisateur(Session session, List<Question> userquestion)
 Finalement, dans la partie \emph{Utilisateur} de la servlet, on introduit la liste \textit{userquestion} des objets de la classe \textit{Question} qui serait remplies par la fonction \textit{question\_utilisateur()} et envoyée vers Utilisateur.jsp.
 
 
-\begin{small}
+\begin{scriptsize}
 \lstset{language=java}
 \begin{lstlisting}
 else if(session.returnType().equals("Utilisateur")) {
@@ -995,12 +998,12 @@ else if(session.returnType().equals("Utilisateur")) {
 		}
 \end{lstlisting}
 
-\end{small}
+\end{scriptsize}
 
 
 Finalement, la liste des questions peut être affichée à l'aide de foreach.\\
 
-\begin{small}
+\begin{scriptsize}
 \lstset{language=XML}
 \begin{lstlisting}
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -1053,7 +1056,7 @@ Finalement, la liste des questions peut être affichée à l'aide de foreach.\\
 </html>
 \end{lstlisting}
 
-\end{small}
+\end{scriptsize}
 
 
 \subsection{Partie CSS}
@@ -1061,6 +1064,7 @@ Finalement, la liste des questions peut être affichée à l'aide de foreach.\\
 Le fichier CSS décrivant la page utilisateur est donné par : 
 
 
+\begin{scriptsize}
 
 \lstset{language=CSS}
 \begin{lstlisting}
@@ -1137,6 +1141,7 @@ tbody tr:hover {
   background: #014055;
 }
 \end{lstlisting}
+\end{scriptsize}
 
 
 Résultat donné pour utilisateur "Ahmed" :\\
@@ -1153,6 +1158,7 @@ pour les approuver ou les rejetter.
 \subsection{Classe Formulaire}
 
 Dans un premier pas on va créer une classe Formulaire dont les attributs sont les colonnes du tableau formulaires.
+\begin{scriptsize}
 
 \lstset{language=java}
 \begin{lstlisting}
@@ -1182,14 +1188,14 @@ public class Formulaire {
     public void affectetat(boolean etat) {
 			this.etat =etat;
 		}
-		
-
 }
 \end{lstlisting}
+\end{scriptsize}
 \subsection{Chargement des formulaires depuis la base de donnée}
 
 On déclare la fonction liste\_formulaire() qui prend en argument deux paramètres \textit{Session} et \textit{liste des Objets de la classe Formulaire} puis il rajoute dans cette l'approuvement ou le rejet du RH.
 
+\begin{scriptsize}
 \lstset{language=java}
 \begin{lstlisting}
 public void liste_formulaire(Session session, List<Formulaire> RH) {
@@ -1218,10 +1224,12 @@ public void liste_formulaire(Session session, List<Formulaire> RH) {
        
     }
 \end{lstlisting}
+\end{scriptsize}
 
 \subsection{Affichage de formulaire}
 
 Finalement, on fait un autre changement dans la partie RH de la servlet, on introduit la liste RH des objets de la classe \textit{Formulaire} qui serait remplie par la fonction \textit{liste\_formulaire()} et envoyée vers RH.jsp.
+\begin{scriptsize}
 
 \lstset{language=java}
 \begin{lstlisting}
@@ -1233,8 +1241,13 @@ Finalement, on fait un autre changement dans la partie RH de la servlet, on intr
 	rst.forward(request, response);
      }
 \end{lstlisting}
- Maintenant pour le fichier JSP ,la liste des utilisateurs et des psychologues est affichée par foreach
-\lstset{language=java}
+\end{scriptsize}
+
+
+Maintenant pour le fichier JSP ,la liste des utilisateurs et des psychologues est affichée par foreach.
+\begin{scriptsize}
+
+\lstset{language=XML}
 \begin{lstlisting}
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -1288,6 +1301,7 @@ Finalement, on fait un autre changement dans la partie RH de la servlet, on intr
 </html>
 
 \end{lstlisting}
+\end{scriptsize}
  
 \subsection{Partie CSS}
 Le fichier CSS décrivant la page RH est celui de l'utilisateur.
@@ -1321,11 +1335,11 @@ Définissons dans un premier temps les deux fonctions :\\
 \begin{itemize}
 \item liste\_formulaire\_psychologue() qui prend en argument le nom du psychologue et une liste des objets de la classe \textit{Formulaire} puis ajoute à cette liste les formulaires récupérés par la requête :\\
 
-\begin{small}
+\begin{scriptsize}
 \textbf{SELECT} * \textbf{FROM} userdb.formulaires f \textbf{WHERE} f.psychologue = ?
-\end{small}
+\end{scriptsize}
 
-\begin{footnotesize}
+\begin{scriptsize}
 
 \begin{lstlisting}
 public void liste_formulaire_psychologue(String nom, List<Formulaire> formulaires) {
@@ -1359,23 +1373,23 @@ public void liste_formulaire_psychologue(String nom, List<Formulaire> formulaire
 
 
 
-\end{footnotesize}
+\end{scriptsize}
 
 
 
 
 
 \item question\_utilisateur\_psychologue() qui prend en argument le nom de l'utilisateur et une liste des objets de la classe \textit{Question} puis ajoute à cette liste les questions récupérés par la requête :\\\\
-\begin{small}
+\begin{scriptsize}
 \textbf{SELECT} * \textbf{FROM} userdb.questions q \\
 \textbf{INNER JOIN} userdb.formulaires f \\
 \textbf{ON} f.id\_formulaire=q.id\_formulaire \textbf{WHERE} f.nom=?
-\end{small}
+\end{scriptsize}
 
 \end{itemize}
 
 
-\begin{footnotesize}
+\begin{scriptsize}
 \begin{lstlisting}
 public void question_utilisateur_psychologue(String Psychologue,
 											 List<Question> userquestion) {
@@ -1408,7 +1422,7 @@ public void question_utilisateur_psychologue(String Psychologue,
 }
 
 \end{lstlisting}
-\end{footnotesize}
+\end{scriptsize}
 
 
 
@@ -1416,7 +1430,7 @@ public void question_utilisateur_psychologue(String Psychologue,
 
 Ensuite dans la servlet login, au cas ou le type l'utilisateur identifié est de type psychologue on exécute les lignes si dessous
 
-\begin{footnotesize}
+\begin{scriptsize}
 \begin{lstlisting}
 if (session.returnType().equals("Psychologue")) {
 	List<Formulaire> formulaires = new ArrayList<Formulaire>();
@@ -1431,7 +1445,7 @@ if (session.returnType().equals("Psychologue")) {
 	RequestDispatcher rst = request.getRequestDispatcher("Psychologue.jsp");
 	rst.forward(request, response);
 \end{lstlisting}
-\end{footnotesize}
+\end{scriptsize}
 
 
 
@@ -1458,7 +1472,7 @@ Finalement la colonne réponse assurera les états des questions :
 
 
 
-\begin{footnotesize}
+\begin{scriptsize}
 \lstset{language=XML}
 \begin{lstlisting}
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -1523,7 +1537,7 @@ Finalement la colonne réponse assurera les états des questions :
 </body>
 </html>
 \end{lstlisting}
-\end{footnotesize}
+\end{scriptsize}
 
 
 
@@ -1549,7 +1563,7 @@ La première tache consiste a choisir le destinataire. De ce fait, on définit l
 
 
 
-\begin{footnotesize}
+\begin{scriptsize}
 \lstset{language=java}
 \begin{lstlisting}
 public List<String> liste_destinataires() {
@@ -1572,7 +1586,7 @@ public List<String> liste_destinataires() {
 	return liste;
 }
 \end{lstlisting}
-\end{footnotesize}
+\end{scriptsize}
 
 
 
@@ -1584,7 +1598,7 @@ Avant l'insertion, on doit s'assurer de l'unicité des id. Pour chaque question/
 
 
 
-\begin{footnotesize}
+\begin{scriptsize}
 \lstset{language=java}
 \begin{lstlisting}
 public void EntrerFormulaireEtQuestions(String Psychologue, 
@@ -1652,7 +1666,7 @@ public void EntrerFormulaireEtQuestions(String Psychologue,
 }
 
 \end{lstlisting}
-\end{footnotesize}
+\end{scriptsize}
 
 
 
@@ -1853,21 +1867,75 @@ Au cas de l'approuvement la question serait affichée à l'utilisateur
 
 
 
+\subsection{Ajustement des recules}
+
+Un problème qui viens d'apparaitre pour le psychologue est le retour vers la page des formulaires après avoir ajouter un nouveau.\\
+
+
+Une solution consiste à transférer le code du psychologue vers la méthode \textit{doget()}. Cela va permettre au bouton du retour de prendre comme action la méthode "get" au lieu de "post".\\
+
+La serlvet login serait donc comme suit 
+
+
+
+\begin{scriptsize}
+\lstset{language=java}
+\begin{lstlisting}
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		List<Formulaire> formulaires = new ArrayList<Formulaire>();
+		List<Question> userquestion = new ArrayList<Question>();
+		DB connexion_db = new DB();
+		Session session = new Session();
+
+		session.affecteNom(request.getParameter("nom"));
+
+		connexion_db.liste_formulaire_psychologue(session.returnNom(), formulaires);
+		connexion_db.question_utilisateur_psychologue(session.returnNom(), userquestion);
+		request.setAttribute("psy", session.returnNom());
+		request.setAttribute("userquestion", userquestion);
+		request.setAttribute("formulaires", formulaires);
+		RequestDispatcher rst = request.getRequestDispatcher("Psychologue.jsp");
+		rst.forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String nom = request.getParameter("nom");
+		String passe = request.getParameter("mot de passe");
+
+		Session session = new Session();
+		session.affecteNom(nom);
+		session.affectePasse(passe);
+		DB connexion_db = new DB();
+		if (connexion_db.valider_donees(session)) {
+			if (session.returnType().equals("Psychologue")) {
+				doGet(request, response);
+		.
+		.
+		.
+		.
+
+\end{lstlisting}
+\end{scriptsize}
 
 
 
 
+Finalement le bouton retour fait appel à la méthode \textit{get} et indique le nom du psychologue en tant que hidden input.
 
-
-
-
-
-
-
-
-
-
-
+\begin{scriptsize}
+\lstset{language=XML}
+\begin{lstlisting}
+<form class = login action="login" method="get">
+<button type="submit" value="Login" class = "logout">Retour</button>
+<input type="hidden" name="nom" value="${psy}" />
+</form>
+\end{lstlisting}
+\end{scriptsize}
 
 
 
