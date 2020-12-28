@@ -1151,6 +1151,111 @@ Résultat donné pour utilisateur "Ahmed" :\\
 \captionof{figure}{Interface utilisateur}
 \end{center}
 
+\subsection{Récupération des réponses par la base de données}
+
+Dans la classe DB, on introduit la fonction \textit{ updateQuetions()} qui prend en argument une liste des id des question et une autre contenant les réponses. Puis insère les réponses correspondant aux id dans la base de données en exécutant la requête :\\
+
+\textbf{UPDATE} `userdb`.`questions` \\
+\textbf{SET} `reponse` = ? \\
+\textbf{WHERE} (`id\_question` = ?)\\
+
+\lstset{language=java}
+\begin{lstlisting}
+public void updateQuestion(int[] idQuestions, int[] reponses){
+	loadDriver(dbDriver);
+	Connection con = getConnection();
+	String sql = "UPDATE `userdb`.`questions` 
+				  SET `reponse` = ? 
+				  WHERE (`id_question` = ?);";
+	PreparedStatement ps;
+	try {
+		for(int j = 0 ; j < idQuestions.length ; j++) {
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, reponses[j]);
+			ps.setInt(2, idQuestions[j]);
+			ps.executeUpdate();
+		}
+		} catch (SQLException e) {
+			e.printStackTrace();
+	}
+}
+\end{lstlisting}
+
+
+
+Le bouton \textbf{'Envoyer'} fait appel à la servlet \textit{Utilisateur} qui, à son rôle, extrait les réponses et les id des questions et les insèrent dans la base de données à l'aide de \textit{updateQuestion()}.
+
+
+
+\begin{small}
+
+\begin{lstlisting}
+package web;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import base_donnees.DB;
+
+@WebServlet("/utilisateur")
+public class Utilisateur extends HttpServlet {
+	protected void doPost(HttpServletRequest request, 
+						  HttpServletResponse response) 
+	throws ServletException, IOException {
+		String[] reponsesExtraits = request.getParameterValues("reponse");
+		String[] idQuestionsExtraits = request.getParameterValues("idQuestion");
+		int[] idQuestions = new int[idQuestionsExtraits.length];
+		int[] reponses = new int[reponsesExtraits.length];
+		for(int i =0 ;i<idQuestionsExtraits.length;i++) {
+			idQuestions[i] = Integer.parseInt(idQuestionsExtraits[i]);
+			reponses[i] = Integer.parseInt(reponsesExtraits[i]);
+		}
+		DB db_connexion = new DB();
+		db_connexion.updateQuestion(idQuestions, reponses);		
+		response.sendRedirect("EnvoieSucces.jsp");
+	}
+}
+\end{lstlisting}
+\end{small}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Résultat donné pour utilisateur "Ahmed" :\\
+
+\begin{center}
+\includegraphics[scale=0.4]{C:/Workplace/java/project/19.png}
+\captionof{figure}{Interface utilisateur}
+\end{center}
+
+
+Au cas de succès de l'envoie des questions la page si dessous s'affiche
+
+\begin{center}
+\includegraphics[scale=0.5]{C:/Workplace/java/project/21.png}
+\end{center}
+
+
+Au cas où aucune question n'est posée pour cet utilisateur la page suivante s'affiche
+
+\begin{center}
+\includegraphics[scale=0.49]{C:/Workplace/java/project/20.png}
+\end{center}
+
 \section{Interface "RH"}
 
 Un RH doit être capable de voir les noms des utilisteurs accompagnés par les noms des psycholoques
@@ -1170,9 +1275,16 @@ public class Formulaire {
 	public String psychologue;
 	public boolean etat;
 	
+	public void affectIdFormulaire(int id_formulaire) {
+		this.id_formulaire = id_formulaire;
+	}
+	public int returnIdFormulaire() {
+		return id_formulaire;
+	}
+	
 	public String getuser() {
-		return nom;}
-		
+		return nom;
+		}
 	public void setuser(String nom) {
 	        this.nom = nom;
 	    }
@@ -1186,60 +1298,68 @@ public class Formulaire {
 			return etat;
 		}
     public void affectetat(boolean etat) {
-			this.etat =etat;
+			this.etat = etat;
 		}
+		
+
 }
 \end{lstlisting}
 \end{scriptsize}
 \subsection{Chargement des formulaires depuis la base de donnée}
 
-On déclare la fonction liste\_formulaire() qui prend en argument deux paramètres \textit{Session} et \textit{liste des Objets de la classe Formulaire} puis il rajoute dans cette l'approuvement ou le rejet du RH.
+On déclare la fonction liste\_formulaire() qui prend en argument  \textit{liste des Objets de la classe Formulaire} puis il rajoute dans cette l'approuvement ou le rejet du RH.
 
 \begin{scriptsize}
 \lstset{language=java}
 \begin{lstlisting}
-public void liste_formulaire(Session session, List<Formulaire> RH) {
-        Statement statement = null;
-        ResultSet resultat = null;
+	public void liste_formulaire(List<Formulaire> RH) {
+		Statement statement = null;
+		ResultSet resultat = null;
 
-        loadDriver(dbDriver);
-        Connection connexion = getConnection();
-        try {
-            statement = connexion.createStatement();
-            resultat = statement.executeQuery("SELECT * FROM userdb.formulaires;");
-            while (resultat.next()) {
-                String user = resultat.getString("nom");
-                String psy = resultat.getString("psychologue");
-                boolean etat = resultat.getBoolean("etat");
-                Formulaire formulaire = new Formulaire();
-                formulaire.setuser(user);
-                formulaire.affectetat(etat);
-                formulaire.setpsy(psy);
-                RH.add(formulaire);
-                System.out.println(user);           }
-        } catch (SQLException e) {
-          e.printStackTrace();
-            
-        }
-       
-    }
+		loadDriver(dbDriver);
+		Connection connexion = getConnection();
+		try {
+			statement = connexion.createStatement();
+			resultat = statement.executeQuery("SELECT * FROM userdb.formulaires;");
+			while (resultat.next()) {
+				String user = resultat.getString("nom");
+				String psy = resultat.getString("psychologue");
+				int id_formulaire = resultat.getInt("id_formulaire");
+				boolean etat = resultat.getBoolean("etat");
+				Formulaire formulaire = new Formulaire();
+				formulaire.setuser(user);
+				formulaire.affectetat(etat);
+				formulaire.setpsy(psy);
+				formulaire.affectIdFormulaire(id_formulaire);
+				RH.add(formulaire);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+
 \end{lstlisting}
 \end{scriptsize}
 
 \subsection{Affichage de formulaire}
 
-Finalement, on fait un autre changement dans la partie RH de la servlet, on introduit la liste RH des objets de la classe \textit{Formulaire} qui serait remplie par la fonction \textit{liste\_formulaire()} et envoyée vers RH.jsp.
+Finalement, on fait un autre changement dans la partie RH de la LoginServlet, on introduit la liste RH des objets de la classe \textit{Formulaire} qui serait remplie par la fonction \textit{liste\_formulaire()} et envoyée vers RH.jsp.
 \begin{scriptsize}
 
 \lstset{language=java}
 \begin{lstlisting}
- else if(session.returnType().equals("RH")) {
-	List<Formulaire> RH = new ArrayList<Formulaire>();
-	connexion_db.liste_formulaire(session,RH);
-	request.setAttribute("RH", RH);
-	RequestDispatcher rst = request.getRequestDispatcher("RH.jsp");
-	rst.forward(request, response);
-     }
+ else if (session.returnType().equals("RH")) {
+		List<Formulaire> RH = new ArrayList<Formulaire>();
+		connexion_db.liste_formulaire(RH);
+		if (RH.size() == 0)
+		response.sendRedirect("noFormulaire.jsp");
+	    else {
+			request.setAttribute("RH", RH);
+			RequestDispatcher rst = request.getRequestDispatcher("RH.jsp");
+			rst.forward(request, response);
+				}
+			}
 \end{lstlisting}
 \end{scriptsize}
 
@@ -1258,45 +1378,40 @@ Maintenant pour le fichier JSP ,la liste des utilisateurs et des psychologues es
 <title>${formulaire}</title>
 
 </head>
-<link href="RHCSS.css" rel="stylesheet" type="text/css">
+<link href="UtilisateurCSS.css" rel="stylesheet" type="text/css">
 <body>
- <form class=envoie action="envoie" method="post">
-  <br>
-  <br>
-  <h1 align=center>Veuillez approuver les etats suivants</h1>
-  <br>
-  <br>
-  <div class="container">
-   <table align=center>
-    <thead>
-     <tr>
-      <th>Utilisateur</th>
-      <th>Psychologue</th>
-      <th>l'etat</th>
-     </tr>
-    </thead>
-    <tbody>
-     <c:forEach items="${RH}" var="formulaire">
-      <tr>
-       <td><c:out value="${formulaire.getuser()}" /></td>
-       <td><c:out value="${formulaire.getpsy()}" /></td>
-       <td>
-        <select name="etat" class="dropbtn">
-         <option value="false">Non</option>
-         <option value="true">Oui</option>
-        </select></td>
-      </tr>
-     </c:forEach>
-    </tbody>
-    <thead>
-     <tr>
-      <td></td>
-      <th align=center><button type="submit" value="Login">Envoyer</button></th>
-     </tr>
-    </thead>
-   </table>
-  </div>
- </form>
+	<form action="RH" method="post">
+		<br> <br>
+		<h1 align=center>Veuillez approuver les etats suivants</h1>
+		<br> <br>
+		<div class="container">
+			<table align=center>
+				<thead>
+					<tr>
+						<th>Utilisateur</th>
+						<th>Psychologue</th>
+						<th>l'etat</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${RH}" var="formulaire">
+						<tr>
+							<td><c:out value="${formulaire.getuser()}" /></td>
+							<td><c:out value="${formulaire.getpsy()}" /></td>
+							<input type="hidden" name="id_formulaire"
+								value="${formulaire.returnIdFormulaire()}" />
+							<td><select name="etat" class="dropbtn">
+									<option value="${formulaire.returnetat()? '1':'0'}"><c:out value="${formulaire.returnetat()? 'Oui':'Non'}" /></option>
+									<option value="${formulaire.returnetat()? '0':'1'}"><c:out value="${formulaire.returnetat()? 'Non':'Oui'}" /></option>
+							</select></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+		<h1 align=center><button type="submit">Envoyer</button></h1>
+		<h1 align=center id='text'>${succes}</h1>
+	</form>
 </body>
 </html>
 
@@ -1313,7 +1428,100 @@ On obtient le résultat suivant:
 \captionof{figure}{Interface RH}
 \end{center}
 
+\subsection{Récupération des états par la base de données}
+Revenant à la classe DB, on rajoute la fonction updateliste\_formulaire qui prend en argument une liste des id des formulaires et une autre contenant les états.On peut insérer les états correspondant au id dans la base des données en exécutant la requête suivante:\\
+\textbf{UPDATE} `userdb`.`formulaires` \\
+\textbf{SET} `etat` = ? \\
+\textbf{WHERE} (`id\_formulaire` = ?)\\
 
+
+
+\lstset{language=java}
+\begin{lstlisting}
+
+       public void updateliste_formulaire(int[] id_formulaire, int[] etat) {
+    		loadDriver(dbDriver);
+    		Connection con = getConnection();
+    		String sql = "UPDATE `userdb`.`formulaires`  
+    		SET `etat` = ? WHERE (`id_formulaire` = ?);";
+    		PreparedStatement ps;
+    		try {
+    			for(int j = 0 ; j < id_formulaire.length ; j++) {
+    				ps = con.prepareStatement(sql);
+    				ps.setInt(1, etat[j]);
+    				ps.setInt(2, id_formulaire[j]);
+    				ps.executeUpdate();
+    			}
+    			} catch (SQLException e) {
+    				e.printStackTrace();
+    		}
+       
+       
+    }
+
+
+\end{lstlisting}
+   Le bouton \textbf{Envoyer} il fait appel à son rôle à la servlet \textbf{RH} qui fait extraire les états et les id des formulaire et les insèrent dans la base des données à l'aide de updateliste\_formulaire().
+   
+\lstset{language=java}
+\begin{lstlisting}
+package web;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import base_donnees.DB;
+
+@WebServlet("/RH")
+public class RH extends HttpServlet {
+	
+	
+protected void doPost(HttpServletRequest request,  HttpServletResponse etats) throws ServletException, IOException {
+
+	
+String[] etatExtraits = request.getParameterValues("etat");
+
+String[] id_formulaireExtraits = request.getParameterValues("id_formulaire");
+
+int[] id_formulaire = new int[id_formulaireExtraits.length];
+
+int[] etat = new int[etatExtraits.length];
+
+for(int i =0 ;i<id_formulaireExtraits.length;i++) {
+    id_formulaire[i] = Integer.parseInt(id_formulaireExtraits[i]);
+    etat[i] = Integer.parseInt(etatExtraits[i]);
+   }
+DB db_connexion = new DB();
+
+db_connexion.updateliste_formulaire(id_formulaire, etat);	
+
+etats.sendRedirect("EnvoieSucces.jsp");
+}
+
+}
+\end{lstlisting}
+
+Résultat donné pour un RH :
+
+\begin{center}
+\includegraphics[scale=0.5]{C:/Workplace/java/project/22.png}
+\end{center}
+
+Après avoir cliquer sur le button \textbf{Envoyer}
+
+\begin{center}
+\includegraphics[scale=0.5]{C:/Workplace/java/project/23.png}
+\end{center}
+
+Au cas où aucun formulaire existe.
+
+\begin{center}
+\includegraphics[scale=0.5]{C:/Workplace/java/project/24.png}
+\end{center}
 
 
 \newpage
@@ -1937,15 +2145,39 @@ Finalement le bouton retour fait appel à la méthode \textit{get} et indique le
 \end{lstlisting}
 \end{scriptsize}
 
+\subsection{Chargement automatique par csv}
 
 
+Pour faire entrer un fichier \textbf{csv} qui contient les questions de psychologue destinés à l'utilisateur on ajoute à la servlet \textbf{NouveauFormulaire} quelques lignes pour lire la fichier csv ligne par ligne pour récupérer les \textbf{Questiontext}
+
+\begin{scriptsize}
+\lstset{language=java}
+\begin{lstlisting}
+String Fichier = request.getParameter("Fichier");
+try (CSVReader reader = new CSVReader(new FileReader(Fichier))) {
+	String[] ligneCSV;
+	while((ligneCSV = reader.readNext()) != null) {
+				QuestionText.add(ligneCSV[0]);
+			}
+
+		}catch(Exception e) {;}
 
 
+\end{lstlisting}
+\end{scriptsize}
 
+Et on ajoute un button \textbf{Ajouter} pour faire entrer le fichier dont on a trouvé son chemin
+donc on doir modifier en ajoutant le code suivant dans \textbf{Nouveauformulaire.jsp}
 
+\begin{scriptsize}
+\lstset{language=XML}
+\begin{lstlisting}
 
+<th width="150"><button type="submit">Ajouter</button> 
+<input type="file" name="Fichier" class="CSV"/> </th>
 
-
+\end{lstlisting}
+\end{scriptsize}
 
 
 
